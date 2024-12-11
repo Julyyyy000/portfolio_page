@@ -46,6 +46,34 @@
             bottom: 0;
             width: 100%;
         }
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .animation-sequence {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            animation: frame-animation 2s steps(4) infinite;
+        }
+        @keyframes frame-animation {
+            0% {
+                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test0.png');
+            }
+            25% {
+                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test1.png');
+            }
+            50% {
+                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test2.png');
+            }
+            75% {
+                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test3.png');
+            }
+            100% {
+                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test0.png');
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,6 +89,8 @@
     <section id="about">
         <h2>About Me</h2>
         <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+        <div class="animation-container">
+        <div class="animation-sequence"></div>
     </section>
     <section id="projects">
         <h2>Projects</h2>
