@@ -46,6 +46,26 @@
             bottom: 0;
             width: 100%;
         }
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .animation-sequence {
+            width: 64px;
+            height: 64px;
+            background-image: url('spritesheet.png');
+            background-size: calc(64px * var(--frame-count)) 64px;
+            animation: sprite-animation 1s steps(var(--frame-count)) infinite;
+        }
+        @keyframes sprite-animation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: calc(-64px * var(--frame-count)) 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,6 +81,9 @@
     <section id="about">
         <h2>About Me</h2>
         <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+            <div class="animation-container">
+                <div class="animation-sequence" style="--frame-count: 4;"></div>
+            </div>
     </section>
     <section id="projects">
         <h2>Projects</h2>
