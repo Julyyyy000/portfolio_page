@@ -54,8 +54,8 @@
         .animation-sequence {
             width: 64px;
             height: 64px;
-            background-image: url('https://julyyyy000.github.io/portfolio_page/Images/bodySpriteSheetTest.png');
-            background-size: calc(64px * var(--frame-count) + 8px * (var(--frame-count) - 1)) calc(64px + 8px);
+            background-image: url('spritesheet.png');
+            background-size: calc(64px * var(--frame-count)) 64px;
             animation: sprite-animation 1s steps(var(--frame-count)) infinite;
         }
         @keyframes sprite-animation {
@@ -63,7 +63,7 @@
                 background-position: 0 0;
             }
             100% {
-                background-position: calc(-64px * var(--frame-count) - 8px * (var(--frame-count) - 1)) 0;
+                background-position: calc(-64px * var(--frame-count)) 0;
             }
         }
     </style>
