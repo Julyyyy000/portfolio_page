@@ -55,15 +55,15 @@
             width: 64px;
             height: 64px;
             background-image: url('https://julyyyy000.github.io/portfolio_page/Images/spritesheet.png');
-            background-size: calc(64px * var(--frame-count)) 64px;
-            animation: sprite-animation 1s steps(var(--frame-count)) infinite;
+            background-size: 100% 64px;
+            animation: sprite-animation 1s steps(calc(var(--spritesheet-width) / 64)) infinite;
         }
         @keyframes sprite-animation {
             0% {
                 background-position: 0 0;
             }
             100% {
-                background-position: calc(-64px * var(--frame-count)) 0;
+                background-position: calc(-100% + 64px) 0;
             }
         }
     </style>
@@ -82,9 +82,22 @@
         <h2>About Me</h2>
         <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
             <div class="animation-container">
-                <div class="animation-sequence" style="--frame-count: 4;"></div>
+                <div class="animation-sequence"></div>
             </div>
     </section>
+    <script>
+        // JavaScript to dynamically set --spritesheet-width
+        window.onload = function () {
+            const spriteElement = document.querySelector('.animation-sequence');
+            const spriteImage = new Image();
+            spriteImage.src = 'https://julyyyy000.github.io/portfolio_page/Images/spritesheet.png';
+
+            spriteImage.onload = function () {
+                const imageWidth = spriteImage.width; // Get the width of the image
+                spriteElement.style.setProperty('--spritesheet-width', `${imageWidth}px`);
+            };
+        };
+    </script>
     <section id="projects">
         <h2>Projects</h2>
         <p>List some of your key projects here. Provide links to GitHub repositories or live demos if applicable.</p>
