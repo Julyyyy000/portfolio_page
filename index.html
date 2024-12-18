@@ -52,26 +52,18 @@
             margin-top: 2rem;
         }
         .animation-sequence {
-            width: 200px;
-            height: 200px;
-            background-size: cover;
-            animation: frame-animation 2s steps(4) infinite;
+            width: 64px;
+            height: 64px;
+            background-image: url('https://julyyyy000.github.io/portfolio_page/Images/bodySpriteSheetTest.png');
+            background-size: calc(64px * var(--frame-count) + 8px * (var(--frame-count) - 1)) calc(64px + 8px);
+            animation: sprite-animation 1s steps(var(--frame-count)) infinite;
         }
-        @keyframes frame-animation {
+        @keyframes sprite-animation {
             0% {
-                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test0.png');
-            }
-            25% {
-                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test1.png');
-            }
-            50% {
-                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test2.png');
-            }
-            75% {
-                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test3.png');
+                background-position: 0 0;
             }
             100% {
-                background-image: url('https://julyyyy000.github.io/portfolio_page/Images/test0.png');
+                background-position: calc(-64px * var(--frame-count) - 8px * (var(--frame-count) - 1)) 0;
             }
         }
     </style>
@@ -90,7 +82,7 @@
         <h2>About Me</h2>
         <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
             <div class="animation-container">
-                <div class="animation-sequence"></div>
+                <div class="animation-sequence" style="--frame-count: 4;"></div>
             </div>
     </section>
     <section id="projects">
