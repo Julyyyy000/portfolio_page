@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name | Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add a separate CSS file for styling -->
+    <!-- <link rel="stylesheet" href="styles.css"> -- Add a separate CSS file for styling -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,30 +13,36 @@
             background-color: #f4f4f9;
             color: #333;
         }
+
         header {
             background-color: #007acc;
             color: #fff;
             padding: 1rem;
             text-align: center;
         }
+
         nav {
             margin: 1rem 0;
             text-align: center;
         }
-        nav a {
-            margin: 0 1rem;
-            color: #007acc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
+
+            nav a {
+                margin: 0 1rem;
+                color: #007acc;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
         section {
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
         }
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -46,28 +52,69 @@
             bottom: 0;
             width: 100%;
         }
+
         .animation-container {
             display: flex;
             justify-content: center;
+            align-items: center;
             margin-top: 2rem;
+            position: relative;
         }
+
         .animation-sequence {
-            width: 64px;
-            height: 64px;
-            background-image: url('https://julyyyy000.github.io/portfolio_page/Images/spritesheet.png');
-            background-size: 100% 64px;
-            animation: sprite-animation 1s steps(calc(var(--spritesheet-width) / 64)) infinite;
+            width: 128px;
+            height: 128px;
+            background-image: url('Images/spritesheet.png');
+            background-size: 896px 128px;
+            animation: sprite-animation 1s steps(var(--frame-count)) infinite;
         }
+
         @keyframes sprite-animation {
             0% {
                 background-position: 0 0;
             }
+
             100% {
-                background-position: calc(-100% + 64px) 0;
+                background-position: calc(-100% + 128px) 0;
             }
         }
+
+        /* Button Controls */
+        .button-controls-left, .button-controls-right {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .button-controls-left {
+            margin-right: 20px;
+        }
+
+        .button-controls-right {
+            margin-left: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
     </style>
 </head>
+
+
+
+
 <body>
     <header>
         <h1>Your Name</h1>
@@ -81,22 +128,96 @@
     <section id="about">
         <h2>About Me</h2>
         <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
-            <div class="animation-container">
-                <div class="animation-sequence"></div>
+        <div class="animation-container">
+            <div class="button-controls-left">
+                <button id="button1">Button 1</button>
+                <button id="button3">Button 3</button>
+                <button id="button5">Button 5</button>
             </div>
+            <div class="animation-sequence"></div>
+            <div class="button-controls-right">
+                <button id="button2">Button 2</button>
+                <button id="button4">Button 4</button>
+                <button id="button6">Button 6</button>
+            </div>
+        </div>
     </section>
     <script>
         // JavaScript to dynamically set --spritesheet-width
         window.onload = function () {
             const spriteElement = document.querySelector('.animation-sequence');
             const spriteImage = new Image();
-            spriteImage.src = 'https://julyyyy000.github.io/portfolio_page/Images/spritesheet.png';
+            spriteImage.src = 'Images/spritesheet.png';
 
             spriteImage.onload = function () {
                 const imageWidth = spriteImage.width; // Get the width of the image
+                const frameCount = imageWidth / 64; // Calculate the number of frames
+
                 spriteElement.style.setProperty('--spritesheet-width', `${imageWidth}px`);
+                spriteElement.style.setProperty('--frame-count', frameCount);
+
+                // Reset and restart the animation
+                spriteElement.style.animation = 'none';
+                void spriteElement.offsetWidth;
+                spriteElement.style.animation = `sprite-animation 1s steps(${frameCount}) infinite`;
             };
         };
+        /*
+        const animationElement = document.querySelector('.animation-sequence');
+
+        const animations = {
+            animation1: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+            animation2: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+            animation3: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+            animation4: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+            animation5: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+            animation6: {
+                image: 'Images/spritesheet1.png',
+                frameCount: 7,
+                backgroundSize: '896px 128px',
+                animationDuration: '1s',
+            },
+        };
+
+        function changeAnimation(animationKey) {
+            const animation = animations[animationKey];
+            animationElement.style.backgroundImage = `url(${animation.image})`;
+            animationElement.style.backgroundSize = animation.backgroundSize;
+            animationElement.style.animation = `sprite-animation ${animation.animationDuration} steps(${animation.frameCount}) infinite`;
+        }
+
+        document.getElementById('animation1').addEventListener('click', () => changeAnimation('animation1'));
+        document.getElementById('animation2').addEventListener('click', () => changeAnimation('animation2'));
+        document.getElementById('animation3').addEventListener('click', () => changeAnimation('animation3'));
+        document.getElementById('animation4').addEventListener('click', () => changeAnimation('animation4'));
+        document.getElementById('animation5').addEventListener('click', () => changeAnimation('animation5'));
+        document.getElementById('animation6').addEventListener('click', () => changeAnimation('animation6'));
+        */
     </script>
     <section id="projects">
         <h2>Projects</h2>
