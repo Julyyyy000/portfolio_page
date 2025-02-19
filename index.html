@@ -4,117 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name | Portfolio</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -- Add a separate CSS file for styling -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #007acc;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        nav {
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-            nav a {
-                margin: 0 1rem;
-                color: #007acc;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-                nav a:hover {
-                    text-decoration: underline;
-                }
-
-        section {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #007acc;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .animation-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2rem;
-            position: relative;
-        }
-
-        .animation-sequence {
-            position: absolute;
-            width: 128px;
-            height: 128px;
-            background-size: 896px 128px;
-            animation: sprite-animation 1s steps(var(--frame-count)) infinite;
-        }
-
-
-
-        @keyframes sprite-animation {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: calc(-100% + var(--frame-width, 128px)) 0;
-            }
-        }
-
-        /* Button Controls */
-        .button-controls-left, .button-controls-right {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            position: relative;
-        }
-
-        .button-controls-left {
-            margin-right: 20px;
-        }
-
-        .button-controls-right {
-            margin-left: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007acc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #005fa3;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
-
 
 <body>
     <header>
@@ -233,9 +124,16 @@
         */
     </script>
     <section id="projects">
-        <h2>Projects</h2>
-        <p>List some of your key projects here. Provide links to GitHub repositories or live demos if applicable.</p>
-    </section>
+        <h2>Games</h2>
+        
+        <div class="project">
+            <h3>My Awesome Project</h3>
+            <p>This project showcases my skills in web development. It features interactive animations and dynamic content.</p>
+            <a href="https://github.com/yourusername/project-repo" target="_blank">View on GitHub</a> | 
+            <a href="https://yourwebsite.com/project" target="_blank">Live Demo</a>
+            <img src="images/project-screenshot.png" alt="My Awesome Project Screenshot" class="project-image">
+        </div>
+    </section>        
     <section id="contact">
         <h2>Contact</h2>
         <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
