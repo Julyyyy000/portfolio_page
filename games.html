@@ -19,11 +19,51 @@
     </nav>
     <section>
         <h2>My Game Projects</h2>
+
+        <!-- First Game Project -->
         <div class="project">
-            <h3>Game Title</h3>
-            <p>Description of the game.</p>
-            <a href="https://your-game-link.com" target="_blank">Play</a>
+            <h3>Game Title 1</h3>
+            <p>Short description of the game. Mention gameplay mechanics, story, or experience.</p>
+            <a href="https://yourgame.itch.io/game-title" target="_blank">Play on Itch.io</a>
+            
+            <!-- Slideshow Container -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="images/game1-1.jpg" alt="Game Screenshot 1">
+                </div>
+                <div class="slide fade">
+                    <img src="images/game1-2.jpg" alt="Game Screenshot 2">
+                </div>
+                <div class="slide fade">
+                    <img src="images/game1-animation.gif" alt="Game Animation">
+                </div>
+
+                <!-- Navigation Arrows -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
         </div>
     </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
