@@ -57,18 +57,16 @@ footer {
     position: absolute;
     width: 128px;
     height: 128px;
-    background-size: 896px 128px;
-    animation: sprite-animation 1s steps(var(--frame-count)) infinite;
 }
 
 
 
 @keyframes sprite-animation {
     0% {
-        background-position: 0 0;
+        background-position: calc(-100% + var(--frame-width, 128px)) 0;
     }
     100% {
-        background-position: calc(-100% + var(--frame-width, 128px)) 0;
+        background-position: 0 0;
     }
 }
 
@@ -212,3 +210,66 @@ button:hover {
     to { opacity: 1; }
 }
 
+/* Category Sections */
+.category {
+    background: #fff;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.learn-more-btn:hover {
+    background-color: #005fa3;
+}
+
+/* Video Containers */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 10px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

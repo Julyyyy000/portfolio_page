@@ -28,8 +28,8 @@
                 <button id="button3">Button 3</button>
                 <button id="button5">Button 5</button>
             </div>
-            <div class="animation-sequence" data-spritesheet="Images/base-spritesheet.png" data-frame-width="64" style = "background-image: url('Images/base-spritesheet.png')"></div>
-            <div class="animation-sequence" data-spritesheet="Images/overlay-spritesheet.png" data-frame-width="64" style = "background-image: url('Images/overlay-spritesheet.png')"></div>
+            <div class="animation-sequence" data-spritesheet="Images/skin_draft.png" data-frame-width="128" style = "background-image: url('Images/skin_draft.png')"></div>
+            <div class="animation-sequence" data-spritesheet="Images/hair_draft_1.png" data-frame-width="128" style = "background-image: url('Images/hair_draft_1.png')"></div>
             <div class="button-controls-right">
                 <button id="button2">Button 2</button>
                 <button id="button4">Button 4</button>
@@ -63,7 +63,7 @@
                     // Reset and restart the animation
                     spriteElement.style.animation = 'none';
                     void spriteElement.offsetWidth; // Trigger reflow
-                    spriteElement.style.animation = `sprite-animation 1s steps(${frameCount}) infinite`;
+                    spriteElement.style.animation = `sprite-animation 5s steps(${frameCount}) infinite`;
                     console.log(`Animation Style: ${spriteElement.style.animation}`);
                 };
             });
@@ -126,15 +126,42 @@
         */
     </script>
     <section id="projects">
-        <h2>Games</h2>
-        
-        <div class="project">
-            <h3>My Awesome Project</h3>
-            <p>This project showcases my skills in web development. It features interactive animations and dynamic content.</p>
-            <a href="https://github.com/yourusername/project-repo" target="_blank">View on GitHub</a> | 
-            <a href="https://yourwebsite.com/project" target="_blank">Live Demo</a>
-            <img src="images/project-screenshot.png" alt="My Awesome Project Screenshot" class="project-image">
-        </div>
+        <!-- Games Section -->
+        <section class="category">
+            <h2>Games</h2>
+            <p>Explore my game projects featuring engaging gameplay and storytelling.</p>
+            <div class="gallery">
+                <img src="images/game1.jpg" alt="Game 1">
+                <img src="images/game2.gif" alt="Game 2">
+            </div>
+            <a href="games.html" class="learn-more-btn">Learn More</a>
+        </section>
+
+        <!-- Interactive Art Section -->
+        <section class="category">
+            <h2>Interactive Art</h2>
+            <p>Creative and interactive digital experiences.</p>
+            <div class="gallery">
+                <img src="images/art1.jpg" alt="Interactive Art 1">
+                <img src="images/art2.jpg" alt="Interactive Art 2">
+            </div>
+            <a href="interactive-art.html" class="learn-more-btn">Learn More</a>
+        </section>
+
+        <!-- Films & Animations Section -->
+        <section class="category">
+            <h2>Films & Animations</h2>
+            <p>Short films and animations exploring storytelling through motion.</p>
+            <div class="gallery">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_OTHER_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <a href="films-animations.html" class="learn-more-btn">Learn More</a>
+        </section>
     </section>        
     <section id="contact">
         <h2>Contact</h2>
