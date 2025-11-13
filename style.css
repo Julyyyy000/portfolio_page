@@ -1,12 +1,12 @@
-/* ---------- Base ---------- */
+/* ---------- Base Styles ---------- */
 :root {
   --brand: #007acc;
   --brand-dark: #005fa3;
   --text: #333;
   --bg: #f4f4f9;
 
-  /* Control the size of the layered GIF animation */
-  --anim-size: 128px;
+  /* Dynamic animation size: scales with screen width */
+  --anim-size: clamp(112px, 24vmin, 256px);
 }
 
 * { box-sizing: border-box; }
@@ -14,7 +14,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0 80px; /* bottom pad so fixed footer doesn’t overlap */
+  padding: 0 0 80px;
   background-color: var(--bg);
   color: var(--text);
 }
@@ -30,13 +30,17 @@ nav {
   margin: 1rem 0;
   text-align: center;
 }
+
 nav a {
   margin: 0 1rem;
   color: var(--brand);
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover { text-decoration: underline; }
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 section {
   padding: 2rem;
@@ -54,7 +58,7 @@ footer {
   width: 100%;
 }
 
-/* ---------- Buttons around animation ---------- */
+/* ---------- Button Controls ---------- */
 .button-controls-left,
 .button-controls-right {
   display: flex;
@@ -62,6 +66,7 @@ footer {
   gap: 10px;
   position: relative;
 }
+
 .button-controls-left { margin-right: 20px; }
 .button-controls-right { margin-left: 20px; }
 
@@ -74,44 +79,45 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
-button:hover { background-color: var(--brand-dark); }
 
-/* ---------- Layered GIF Animation (Option B) ---------- */
+button:hover {
+  background-color: var(--brand-dark);
+}
+
+/* ---------- Layered GIF Animation (Responsive) ---------- */
 .animation-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
   margin-top: 2rem;
-  position: relative;
 }
 
 .animation-stack {
   position: relative;
   width: var(--anim-size);
   height: var(--anim-size);
+  margin: 0 auto;
 }
 
-/* Each layer is a GIF background; no JS or keyframes needed */
 .animation-layer {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; /* keep aspect */
-  pointer-events: none;      /* don’t block the buttons */
-  image-rendering: pixelated;/* nice for low-res/pixel art */
+  background-size: contain;
+  pointer-events: none;
+  image-rendering: pixelated;
 }
 
-/* Stacking order: skin under hair */
 .layer-skin { z-index: 1; }
 .layer-hair { z-index: 2; }
 
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .animation-layer {
-    /* Animated GIFs can’t be paused via CSS, but we can show a static fallback if you
-       also export a still PNG/JPG and swap the URL in HTML when reduced motion is detected via JS.
-       Leaving this comment to note the limitation. */
+/* Mobile behavior: buttons stack vertically */
+@media (max-width: 640px) {
+  .animation-container {
+    flex-direction: column;
+    gap: 16px;
   }
 }
 
@@ -141,7 +147,6 @@ button:hover { background-color: var(--brand-dark); }
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Learn More Button */
 .learn-more-btn {
   display: inline-block;
   margin-top: 15px;
@@ -152,18 +157,22 @@ button:hover { background-color: var(--brand-dark); }
   border-radius: 5px;
   font-weight: bold;
 }
-.learn-more-btn:hover { background-color: var(--brand-dark); }
 
-/* Video thumbnails */
+.learn-more-btn:hover {
+  background-color: var(--brand-dark);
+}
+
+/* ---------- Video Container ---------- */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
   background: #000;
   border-radius: 8px;
 }
+
 .video-container iframe {
   position: absolute;
   inset: 0;
