@@ -5,8 +5,8 @@
   --text: #333;
   --bg: #f4f4f9;
 
-  /* Dynamic animation size: scales with screen width */
-  --anim-size: clamp(112px, 24vmin, 256px);
+  /* Responsive animation size (make it big/snazzy) */
+  --anim-size: clamp(220px, 45vmin, 640px);
 }
 
 * { box-sizing: border-box; }
@@ -14,7 +14,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0 80px;
+  padding: 0 0 80px;            /* room for fixed footer */
   background-color: var(--bg);
   color: var(--text);
 }
@@ -38,9 +38,7 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
+nav a:hover { text-decoration: underline; }
 
 section {
   padding: 2rem;
@@ -58,33 +56,23 @@ footer {
   width: 100%;
 }
 
-/* ---------- Button Controls ---------- */
-.button-controls-left,
-.button-controls-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-}
-
-.button-controls-left { margin-right: 20px; }
-.button-controls-right { margin-left: 20px; }
-
+/* ---------- Generic Buttons (you can reuse anywhere) ---------- */
 button {
   padding: 10px 20px;
   background-color: var(--brand);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: var(--brand-dark);
-}
+button:hover { background-color: var(--brand-dark); }
 
-/* ---------- Layered GIF Animation (Responsive) ---------- */
+/* ---------- (Legacy) Animation container with side buttons ----------
+   Kept for compatibility; safe to remove if not used anywhere. */
 .animation-container {
   display: flex;
   justify-content: center;
@@ -92,33 +80,69 @@ button:hover {
   gap: 40px;
   margin-top: 2rem;
 }
+.button-controls-left,
+.button-controls-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.button-controls-left { margin-right: 20px; }
+.button-controls-right { margin-left: 20px; }
 
+/* ---------- About: Animation left, text/buttons right ---------- */
+.about-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;  /* animation column, then flexible text */
+  align-items: center;
+  gap: 48px;
+  padding: 2rem 0;
+}
+
+.about-left {
+  display: flex;
+  justify-content: center;
+}
+
+/* Layered GIF animation box */
 .animation-stack {
   position: relative;
   width: var(--anim-size);
   height: var(--anim-size);
-  margin: 0 auto;
+  flex-shrink: 0;
 }
 
+/* Each animated layer fills the box */
 .animation-layer {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  pointer-events: none;
-  image-rendering: pixelated;
+  background-size: contain;   /* keep full image visible */
+  pointer-events: none;       /* don’t block clicks */
+  image-rendering: pixelated; /* optional: nice for line/pixel art */
 }
 
+/* Stacking order: bottom -> top */
+.layer-bg   { z-index: 0; }
 .layer-skin { z-index: 1; }
-.layer-hair { z-index: 2; }
+.layer-nose { z-index: 2; }
+.layer-lip  { z-index: 3; }
+.layer-hair { z-index: 4; }
 
-/* Mobile behavior: buttons stack vertically */
-@media (max-width: 640px) {
-  .animation-container {
-    flex-direction: column;
-    gap: 16px;
-  }
+/* Right column: buttons for cycling styles */
+.about-right h2 { margin-top: 0; }
+
+.button-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr)); /* 2x2 */
+  gap: 12px 18px;
+  max-width: 360px;
+}
+
+.layer-cycle {
+  /* inherits base button styles */
 }
 
 /* ---------- Projects / Categories ---------- */
@@ -157,26 +181,37 @@ button:hover {
   border-radius: 5px;
   font-weight: bold;
 }
+.learn-more-btn:hover { background-color: var(--brand-dark); }
 
-.learn-more-btn:hover {
-  background-color: var(--brand-dark);
-}
-
-/* ---------- Video Container ---------- */
+/* ---------- Video Embeds ---------- */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%;  /* 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;
   background: #000;
   border-radius: 8px;
 }
-
 .video-container iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border-radius: 8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-wrapper {
+    grid-template-columns: 1fr; /* stack */
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .animation-container {
+    flex-direction: column; /* for legacy container if used */
+    gap: 16px;
+  }
 }

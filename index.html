@@ -21,30 +21,35 @@
     <a href="index.html#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
-
-    <div class="animation-container">
-      <div class="button-controls-left">
-        <button id="button1">Button 1</button>
-        <button id="button3">Button 3</button>
-        <button id="button5">Button 5</button>
-      </div>
-
-      <!-- Layered GIF stack -->
-      <div class="animation-stack">
-        <div class="animation-layer layer-skin" style="background-image: url('images/skin.gif');"></div>
-        <div class="animation-layer layer-hair" style="background-image: url('images/hair.gif');"></div>
-      </div>
-
-      <div class="button-controls-right">
-        <button id="button2">Button 2</button>
-        <button id="button4">Button 4</button>
-        <button id="button6">Button 6</button>
+<section id="about">
+  <div class="about-wrapper">
+    <!-- LEFT: layered animation -->
+    <div class="about-left">
+      <div class="animation-stack" aria-label="Layered character animation">
+        <div class="animation-layer layer-bg" style="background-image:url('images/background-1.gif');"></div>
+        <div class="animation-layer layer-skin" style="background-image:url('images/skin.gif');"></div>
+        <div class="animation-layer layer-nose" style="background-image:url('images/nose-1.gif');"></div>
+        <div class="animation-layer layer-lip" style="background-image:url('images/lip-1.gif');"></div>
+        <div class="animation-layer layer-hair" style="background-image:url('images/hair-1.gif');"></div>
       </div>
     </div>
-  </section>
+
+    <!-- RIGHT: description + control buttons -->
+    <div class="about-right">
+      <h2>About Me</h2>
+      <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+
+      <div class="button-grid">
+        <button class="layer-cycle" data-layer="layer-hair">Hair</button>
+        <button class="layer-cycle" data-layer="layer-lip">Lip</button>
+        <button class="layer-cycle" data-layer="layer-nose">Nose</button>
+        <button class="layer-cycle" data-layer="layer-bg">Background</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <section id="projects">
     <!-- Games Section -->
@@ -93,5 +98,58 @@
   <footer>
     <p>&copy; 2024 Your Name. All rights reserved.</p>
   </footer>
+  <script>
+  // Define all possible styles for each layer
+  const layerOptions = {
+    "layer-hair": [
+        "images/hair-0.gif",
+      "images/hair-1.gif",
+      "images/hair-2.gif",
+      "images/hair-3.gif"
+    ],
+    "layer-lip": [
+      "images/lip-1.gif",
+      "images/lip-2.gif"
+    ],
+    "layer-nose": [
+      "images/nose-1.gif",
+      "images/nose-2.gif"
+    ],
+    "layer-bg": [
+      "images/background-1.gif",
+      "images/background-2.gif",
+      "images/background-3.gif"
+    ]
+  };
+
+  // Store current index for each layer
+  const currentIndex = {};
+
+  // Initialize all indices to 0
+  Object.keys(layerOptions).forEach(layer => currentIndex[layer] = 0);
+
+  // Function to cycle through GIFs
+  function cycleLayer(layerClass) {
+    const layer = document.querySelector("." + layerClass);
+    const options = layerOptions[layerClass];
+    if (!layer || !options) return;
+
+    // Increment index and wrap around
+    currentIndex[layerClass] = (currentIndex[layerClass] + 1) % options.length;
+
+    // Update background image
+    const newImage = options[currentIndex[layerClass]];
+    layer.style.backgroundImage = `url('${newImage}')`;
+  }
+
+  // Attach click listeners to buttons
+  document.querySelectorAll(".layer-cycle").forEach(button => {
+    button.addEventListener("click", () => {
+      const layer = button.dataset.layer;
+      cycleLayer(layer);
+    });
+  });
+</script>
+
 </body>
 </html>
