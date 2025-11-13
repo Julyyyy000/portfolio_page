@@ -1,275 +1,173 @@
+/* ---------- Base ---------- */
+:root {
+  --brand: #007acc;
+  --brand-dark: #005fa3;
+  --text: #333;
+  --bg: #f4f4f9;
+
+  /* Control the size of the layered GIF animation */
+  --anim-size: 128px;
+}
+
+* { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 80px; /* bottom pad so fixed footer doesn’t overlap */
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 header {
-    background-color: #007acc;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
+  background-color: var(--brand);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
 
 nav {
-    margin: 1rem 0;
-    text-align: center;
+  margin: 1rem 0;
+  text-align: center;
 }
-
-    nav a {
-        margin: 0 1rem;
-        color: #007acc;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a {
+  margin: 0 1rem;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
 
 section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #007acc;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--brand);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.animation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    position: relative;
-}
-
-.animation-sequence {
-    position: absolute;
-    width: 128px;
-    height: 128px;
-}
-
-
-
-@keyframes sprite-animation {
-    0% {
-        background-position: calc(-100% + var(--frame-width, 128px)) 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
-
-/* Button Controls */
-.button-controls-left, .button-controls-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: relative;
-}
-
-.button-controls-left {
-    margin-right: 20px;
-}
-
+/* ---------- Buttons around animation ---------- */
+.button-controls-left,
 .button-controls-right {
-    margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
 }
+.button-controls-left { margin-right: 20px; }
+.button-controls-right { margin-left: 20px; }
 
 button {
-    padding: 10px 20px;
-    background-color: #007acc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { background-color: var(--brand-dark); }
+
+/* ---------- Layered GIF Animation (Option B) ---------- */
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  position: relative;
 }
 
-button:hover {
-    background-color: #005fa3;
+.animation-stack {
+  position: relative;
+  width: var(--anim-size);
+  height: var(--anim-size);
 }
 
-.project {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Each layer is a GIF background; no JS or keyframes needed */
+.animation-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* keep aspect */
+  pointer-events: none;      /* don’t block the buttons */
+  image-rendering: pixelated;/* nice for low-res/pixel art */
 }
 
-.project h3 {
-    font-size: 1.5rem;
-    color: #007acc;
+/* Stacking order: skin under hair */
+.layer-skin { z-index: 1; }
+.layer-hair { z-index: 2; }
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animation-layer {
+    /* Animated GIFs can’t be paused via CSS, but we can show a static fallback if you
+       also export a still PNG/JPG and swap the URL in HTML when reduced motion is detected via JS.
+       Leaving this comment to note the limitation. */
+  }
 }
 
-.project p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.project a {
-    text-decoration: none;
-    color: #007acc;
-    margin-right: 10px;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-.project img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin: 10px 0;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Navigation Arrows */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 10px;
-    color: white;
-    font-size: 24px;
-    transition: 0.3s;
-    border-radius: 5px;
-    user-select: none;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.fade {
-    animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-/* Category Sections */
+/* ---------- Projects / Categories ---------- */
 .category {
-    background: #fff;
-    padding: 30px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    text-align: center;
+  background: #fff;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-/* Gallery */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .gallery img {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Learn More Button */
 .learn-more-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #007acc;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--brand);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
+.learn-more-btn:hover { background-color: var(--brand-dark); }
 
-.learn-more-btn:hover {
-    background-color: #005fa3;
-}
-
-/* Video Containers */
+/* Video thumbnails */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin: 10px 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
 }
-
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }

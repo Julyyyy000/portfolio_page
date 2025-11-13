@@ -1,174 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Welcome to my portfolio</p>
-    </header>
-    <nav>
-        <a href="index.html#about">About</a>
-        <a href="games.html">Games</a>
-        <a href="interactive-art.html">Interactive Art</a>
-        <a href="films-animations.html">Films & Animations</a>
-        <a href="index.html#contact">Contact</a>
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
-        <div class="animation-container">
-            <div class="button-controls-left">
-                <button id="button1">Button 1</button>
-                <button id="button3">Button 3</button>
-                <button id="button5">Button 5</button>
-            </div>
-            <div class="animation-sequence" data-spritesheet="Images/skin_draft.png" data-frame-width="128" style = "background-image: url('Images/skin_draft.png')"></div>
-            <div class="animation-sequence" data-spritesheet="Images/hair_draft_1.png" data-frame-width="128" style = "background-image: url('Images/hair_draft_1.png')"></div>
-            <div class="button-controls-right">
-                <button id="button2">Button 2</button>
-                <button id="button4">Button 4</button>
-                <button id="button6">Button 6</button>
-            </div>
+  <header>
+    <h1>Your Name</h1>
+    <p>Welcome to my portfolio</p>
+  </header>
+
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="games.html">Games</a>
+    <a href="interactive-art.html">Interactive Art</a>
+    <a href="films-animations.html">Films & Animations</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+
+    <div class="animation-container">
+      <div class="button-controls-left">
+        <button id="button1">Button 1</button>
+        <button id="button3">Button 3</button>
+        <button id="button5">Button 5</button>
+      </div>
+
+      <!-- Layered GIF stack (Option B) -->
+      <div class="animation-stack" aria-label="Animated character">
+        <div class="animation-layer layer-skin"
+             style="background-image: url('images/skin.gif');"></div>
+        <div class="animation-layer layer-hair"
+             style="background-image: url('images/hair.gif');"></div>
+      </div>
+
+      <div class="button-controls-right">
+        <button id="button2">Button 2</button>
+        <button id="button4">Button 4</button>
+        <button id="button6">Button 6</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <!-- Games Section -->
+    <section class="category">
+      <h2>Games</h2>
+      <p>Explore my game projects featuring engaging gameplay and storytelling.</p>
+      <div class="gallery">
+        <img src="images/game1.jpg" alt="Game 1 preview"/>
+        <img src="images/game2.gif" alt="Game 2 animated preview"/>
+      </div>
+      <a href="games.html" class="learn-more-btn">Learn More</a>
+    </section>
+
+    <!-- Interactive Art Section -->
+    <section class="category">
+      <h2>Interactive Art</h2>
+      <p>Creative and interactive digital experiences.</p>
+      <div class="gallery">
+        <img src="images/art1.jpg" alt="Interactive Art 1"/>
+        <img src="images/art2.jpg" alt="Interactive Art 2"/>
+      </div>
+      <a href="interactive-art.html" class="learn-more-btn">Learn More</a>
+    </section>
+
+    <!-- Films & Animations Section -->
+    <section class="category">
+      <h2>Films & Animations</h2>
+      <p>Short films and animations exploring storytelling through motion.</p>
+      <div class="gallery">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                  title="Film 1" frameborder="0" allowfullscreen></iframe>
         </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/YOUR_OTHER_VIDEO_ID"
+                  title="Film 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <a href="films-animations.html" class="learn-more-btn">Learn More</a>
     </section>
-    <script>
-        // JavaScript to dynamically set --spritesheet-width
-        window.onload = function () {
-            // Select all elements with the class 'animation-sequence'
-            const spriteElements = document.querySelectorAll('.animation-sequence');
+  </section>
 
-            spriteElements.forEach((spriteElement) => {
-                // Create a new image object for each element
-                const spriteImage = new Image();
-                const imageSrc = spriteElement.dataset.spritesheet; // Use data attribute for image source
-                spriteImage.src = imageSrc;
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at:
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+    </p>
+  </section>
 
-                spriteImage.onload = function () {
-                    console.log(`Found sprite element: ${spriteElement.className}`);
-                    console.log(`Loaded image: ${imageSrc}`);
-                    const imageWidth = spriteImage.width; // Get the width of the image
-                    const frameCount = imageWidth / parseInt(spriteElement.dataset.frameWidth); // Calculate frame count
-
-                    // Set CSS variables for this sprite element
-                    spriteElement.style.setProperty('--spritesheet-width', `${imageWidth}px`);
-                    spriteElement.style.setProperty('--frame-count', frameCount);
-                    spriteElement.style.setProperty('--frame-width', `${parseInt(spriteElement.dataset.frameWidth, 10)}px`);
-
-                    // Reset and restart the animation
-                    spriteElement.style.animation = 'none';
-                    void spriteElement.offsetWidth; // Trigger reflow
-                    spriteElement.style.animation = `sprite-animation 5s steps(${frameCount}) infinite`;
-                    console.log(`Animation Style: ${spriteElement.style.animation}`);
-                };
-            });
-        };
-        /*
-        const animationElement = document.querySelector('.animation-sequence');
-
-        const animations = {
-            animation1: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-            animation2: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-            animation3: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-            animation4: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-            animation5: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-            animation6: {
-                image: 'Images/spritesheet1.png',
-                frameCount: 7,
-                backgroundSize: '896px 128px',
-                animationDuration: '1s',
-            },
-        };
-
-        function changeAnimation(animationKey) {
-            const animation = animations[animationKey];
-            animationElement.style.backgroundImage = `url(${animation.image})`;
-            animationElement.style.backgroundSize = animation.backgroundSize;
-            animationElement.style.animation = `sprite-animation ${animation.animationDuration} steps(${animation.frameCount}) infinite`;
-        }
-
-        document.getElementById('animation1').addEventListener('click', () => changeAnimation('animation1'));
-        document.getElementById('animation2').addEventListener('click', () => changeAnimation('animation2'));
-        document.getElementById('animation3').addEventListener('click', () => changeAnimation('animation3'));
-        document.getElementById('animation4').addEventListener('click', () => changeAnimation('animation4'));
-        document.getElementById('animation5').addEventListener('click', () => changeAnimation('animation5'));
-        document.getElementById('animation6').addEventListener('click', () => changeAnimation('animation6'));
-        */
-    </script>
-    <section id="projects">
-        <!-- Games Section -->
-        <section class="category">
-            <h2>Games</h2>
-            <p>Explore my game projects featuring engaging gameplay and storytelling.</p>
-            <div class="gallery">
-                <img src="images/game1.jpg" alt="Game 1">
-                <img src="images/game2.gif" alt="Game 2">
-            </div>
-            <a href="games.html" class="learn-more-btn">Learn More</a>
-        </section>
-
-        <!-- Interactive Art Section -->
-        <section class="category">
-            <h2>Interactive Art</h2>
-            <p>Creative and interactive digital experiences.</p>
-            <div class="gallery">
-                <img src="images/art1.jpg" alt="Interactive Art 1">
-                <img src="images/art2.jpg" alt="Interactive Art 2">
-            </div>
-            <a href="interactive-art.html" class="learn-more-btn">Learn More</a>
-        </section>
-
-        <!-- Films & Animations Section -->
-        <section class="category">
-            <h2>Films & Animations</h2>
-            <p>Short films and animations exploring storytelling through motion.</p>
-            <div class="gallery">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YOUR_OTHER_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <a href="films-animations.html" class="learn-more-btn">Learn More</a>
-        </section>
-    </section>        
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+  </footer>
 </body>
 </html>
