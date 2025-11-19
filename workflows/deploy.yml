@@ -1,0 +1,38 @@
+name: Deploy with Cache Busting
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Add cache-busting timestamps to JS/CSS imports
+        run: |
+          ts=$(date +%s)
+          echo "Adding cache-busting version: $ts"
+          find . -name "*.html" -type f -exec sed -i -E "s/(\.js)(\?v=[0-9]+)?\"/.js?v=${ts}\"/g" {} +
+          find . -name "*.html" -type f -exec sed -i -E "s/(\.css)(\?v=[0-9]+)?\"/.css?v=${ts}\"/g" {} +
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."  # change to build folder if you have one
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
