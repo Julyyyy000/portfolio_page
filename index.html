@@ -1,59 +1,144 @@
-<!-- ABOUT SECTION -->
-<section id="about">
-  <div class="about-wrapper">
-    <!-- LEFT: layered animation -->
-    <div class="about-left">
-      <div class="animation-stack" aria-label="Layered character animation">
-        <div class="animation-layer layer-bg" style="background-image:url('images/background-1.gif');"></div>
-        <div class="animation-layer layer-skin" style="background-image:url('images/skin.gif');"></div>
-        <div class="animation-layer layer-nose" style="background-image:url('images/nose-1.gif');"></div>
-        <div class="animation-layer layer-lip" style="background-image:url('images/lip-1.gif');"></div>
-        <div class="animation-layer layer-hair" style="background-image:url('images/hair-1.gif');"></div>
+<body>
+  <header>
+    <h1>June Shi</h1>
+    <p>Welcome to my portfolio</p>
+  </header>
+
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="index.html#creative-sample">Creative Sample</a>
+    <a href="games.html">Games</a>
+    <a href="interactive-art.html">Interactive Art</a>
+    <a href="films-animations.html">Films & Animations</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="about-wrapper">
+      <div class="about-left">
+        <div class="animation-stack" aria-label="Layered character animation">
+          <div class="animation-layer layer-bg" style="background-image:url('images/background-1.gif');"></div>
+          <div class="animation-layer layer-skin" style="background-image:url('images/skin.gif');"></div>
+          <div class="animation-layer layer-nose" style="background-image:url('images/nose-1.gif');"></div>
+          <div class="animation-layer layer-lip" style="background-image:url('images/lip-1.gif');"></div>
+          <div class="animation-layer layer-hair" style="background-image:url('images/hair-1.gif');"></div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <h2>About Me</h2>
+        <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+        <div class="button-grid">
+          <button class="layer-cycle" data-layer="layer-hair">Hair</button>
+          <button class="layer-cycle" data-layer="layer-lip">Lip</button>
+          <button class="layer-cycle" data-layer="layer-nose">Nose</button>
+          <button class="layer-cycle" data-layer="layer-bg">Background</button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- RIGHT: description + control buttons -->
-    <div class="about-right">
-      <h2>About Me</h2>
-      <p>Write a brief introduction about yourself here. Mention your skills, experiences, or goals.</p>
+  <!-- CREATIVE SAMPLE SECTION -->
+  <section id="creative-sample" class="category">
+    <h2>Creative Sample</h2>
+    <p>A selected creative work exploring motion, mood, and visual storytelling.</p>
 
-      <div class="button-grid">
-        <button class="layer-cycle" data-layer="layer-hair">Hair</button>
-        <button class="layer-cycle" data-layer="layer-lip">Lip</button>
-        <button class="layer-cycle" data-layer="layer-nose">Nose</button>
-        <button class="layer-cycle" data-layer="layer-bg">Background</button>
+    <div class="gallery">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/0-KV_zLNsiA"
+          title="Creative Sample Video 1"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/ikAmvHQ_MYY"
+          title="Creative Sample Video 2"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CREATIVE SAMPLE SECTION -->
-<section id="creative-sample" class="category">
-  <h2>Creative Sample</h2>
-  <p>A selected creative work exploring motion, mood, and visual storytelling.</p>
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <!-- Games Section -->
+    <section class="category">
+      <h2>Games</h2>
+      <p>Explore my game projects featuring engaging gameplay and storytelling.</p>
+      <div class="gallery">
+        <img src="images/game1.jpg" alt="Game 1" />
+        <img src="images/game2.gif" alt="Game 2" />
+      </div>
+      <a href="games.html" class="learn-more-btn">Learn More</a>
+    </section>
 
-  <div class="gallery">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/0-KV_zLNsiA"
-        title="Creative Sample Video 1"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <!-- Interactive Art Section -->
+    <section class="category">
+      <h2>Interactive Art</h2>
+      <p>Creative and interactive digital experiences.</p>
+      <div class="gallery">
+        <img src="images/art1.jpg" alt="Interactive Art 1" />
+        <img src="images/art2.jpg" alt="Interactive Art 2" />
+      </div>
+      <a href="interactive-art.html" class="learn-more-btn">Learn More</a>
+    </section>
 
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/ikAmvHQ_MYY"
-        title="Creative Sample Video 2"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</section>
+    <!-- Films & Animations Section -->
+    <section class="category">
+      <h2>Films & Animations</h2>
+      <p>Short films and animations exploring storytelling through motion.</p>
+      <div class="gallery">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/YOUR_OTHER_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <a href="films-animations.html" class="learn-more-btn">Learn More</a>
+    </section>
+  </section>
 
-<!-- PROJECTS SECTION -->
-<section id="projects">
-  <!-- existing Projects content here -->
-</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 June Shi. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Layer cycling script
+  const layerOptions = {
+    "layer-hair": ["images/hair-0.gif","images/hair-1.gif","images/hair-2.gif","images/hair-3.gif"],
+    "layer-lip": ["images/lip-1.gif","images/lip-2.gif"],
+    "layer-nose": ["images/nose-1.gif","images/nose-2.gif"],
+    "layer-bg": ["images/background-1.gif","images/background-2.gif","images/background-3.gif"]
+  };
+  const currentIndex = {};
+  Object.keys(layerOptions).forEach(layer => currentIndex[layer] = 0);
+
+  function cycleLayer(layerClass) {
+    const layer = document.querySelector("." + layerClass);
+    const options = layerOptions[layerClass];
+    if (!layer || !options) return;
+    currentIndex[layerClass] = (currentIndex[layerClass] + 1) % options.length;
+    layer.style.backgroundImage = `url('${options[currentIndex[layerClass]]}')`;
+  }
+
+  document.querySelectorAll(".layer-cycle").forEach(button => {
+    button.addEventListener("click", () => {
+      const layer = button.dataset.layer;
+      cycleLayer(layer);
+    });
+  });
+  </script>
+</body>
