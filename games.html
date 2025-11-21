@@ -1,69 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Games</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="games.html">Games</a>
-        <a href="interactive-art.html">Interactive Art</a>
-        <a href="films-animations.html">Films & Animations</a>
-        <a href="index.html#contact">Contact</a>
-    </nav>
-    <section>
-        <h2>My Game Projects</h2>
+<header>
+  <h1>Games</h1>
+</header>
 
-        <!-- First Game Project -->
-        <div class="project">
-            <h3>Game Title 1</h3>
-            <p>Short description of the game. Mention gameplay mechanics, story, or experience.</p>
-            <a href="https://yourgame.itch.io/game-title" target="_blank">Play on Itch.io</a>
-            
-            <!-- Slideshow Container -->
-            <div class="slideshow-container">
-                <div class="slide fade">
-                    <img src="images/game1-1.jpg" alt="Game Screenshot 1">
-                </div>
-                <div class="slide fade">
-                    <img src="images/game1-2.jpg" alt="Game Screenshot 2">
-                </div>
-                <div class="slide fade">
-                    <img src="images/game1-animation.gif" alt="Game Animation">
-                </div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="interactive-art.html">Interactive Art</a>
+  <a href="games.html">Games</a>
+  <a href="moving-image.html">Moving Image</a>
+  <a href="fine-art.html">Fine Art Archive</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
 
-                <!-- Navigation Arrows -->
-                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                <a class="next" onclick="changeSlide(1)">&#10095;</a>
-            </div>
-        </div>
-    </section>
+<section>
+  <h2>Featured Game</h2>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
+  <div class="project featured-box">
+    <h3>Missing Qin (2025)</h3>
+    <p>
+      A narrative pixel-art game following a protagonist searching for a missing classmate, uncovering romanticized harassment and pressures within school life. 
+      Built in Unity for Ludum Dare 57.
+    </p>
+    <a href="https://jjjjuly.itch.io/missing-qin" target="_blank">Play on Itch.io</a>
+  </div>
 
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
+  <h2>2024</h2>
 
-        function changeSlide(n) {
-            slideIndex += n - 1;
-            showSlides();
-        }
-    </script>
+  <div class="project">
+    <h3>Night By Exam (2024)</h3>
+    <p>
+      A mental-health puzzle game developed for the 2024 Mental Health Champion event. Unity 2D.
+    </p>
+    <a href="https://jjjjuly.itch.io/night-by-exam" target="_blank">Play on Itch.io</a>
+  </div>
+
+  <div class="project">
+    <h3>Make Them Cry (2024)</h3>
+    <p>
+      A hybrid 2D/3D narrative game combining humor with emotional depth. Created for Global Game Jam 2024.
+    </p>
+    <a href="https://alicelong.itch.io/make-them-cry" target="_blank">Play on Itch.io</a>
+  </div>
+
+  <div class="project">
+    <h3>Top Kitchen (2024)</h3>
+    <p>
+      A 3D puzzle/simulation game set in an interdimensional restaurant, developed for NYU Game Center Incubator.
+    </p>
+  </div>
+
+  <h2>2023</h2>
+
+  <div class="project">
+    <h3>Shadow of the House (2023)</h3>
+    <p>A haunted-house narrative exploration game created for GMTK Game Jam 2023.</p>
+    <a href="https://yarwhal.itch.io/shadow-of-the-house" target="_blank">Play on Itch.io</a>
+  </div>
+
+  <div class="project">
+    <h3>Go Back Home (2023)</h3>
+    <p>A cultural-memory puzzle game for GGJ 2023.</p>
+    <a href="https://v3.globalgamejam.org/2023/games/back-home-1" target="_blank">Play</a>
+  </div>
+
+  <div class="project">
+    <h3>Night in the Church (2023)</h3>
+    <p>
+      A reinterpretation of *Night in the Woods* created for NYU Intermediate Game Development.
+    </p>
+    <a href="https://megan-d.itch.io/night-in-the-church" target="_blank">Play on Itch.io</a>
+  </div>
+
+  <h2>2022</h2>
+
+  <div class="project">
+    <h3>The Uncooked (2022)</h3>
+    <p>Mysterious narrative adventure submitted to Queer Games Bundle 2022.</p>
+    <a href="https://shanzhilee.itch.io/the-uncooked" target="_blank">Play</a>
+  </div>
+
+  <div class="project">
+    <h3>That toilet…feels so good (2022)</h3>
+    <p>A nostalgic dreamlike pixel-art game created for Ludum Dare 50.</p>
+    <a href="https://shanzhilee.itch.io/that-toilet-feels-so-good" target="_blank">Play</a>
+  </div>
+
+  <div class="project">
+    <h3>Finding Alex (2022)</h3>
+    <p>Horror escape-room game submitted to Brackeys Jam 2022.</p>
+    <a href="https://shanzhilee.itch.io/finding-alex" target="_blank">Play</a>
+  </div>
+
+  <div class="project">
+    <h3>Love or Shit (2022)</h3>
+    <p>Visual novel mixed with labyrinth puzzles. GGJ 2022.</p>
+    <a href="https://shanzhilee.itch.io/love-or-shit" target="_blank">Play</a>
+  </div>
+
+  <h2>2021–2020 (Early Works)</h2>
+
+  <div class="project">
+    <h3>Untitled Platformer (2021)</h3>
+    <p>2D platformer about battling creatures with abilities. Class project in GameMaker.</p>
+  </div>
+
+  <div class="project">
+    <h3>Night by Exam (2021)</h3>
+    <p>Click-based visual novel created in Processing.</p>
+  </div>
+
+  <div class="project">
+    <h3>Hensel and Gretel Remake (2022)</h3>
+    <p>A fairy-tale reinterpretation created for NYU Fairy Tale in the 21st Century.</p>
+  </div>
+
+</section>
 </body>
 </html>
