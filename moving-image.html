@@ -16,6 +16,12 @@
             max-width: 900px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
         }
 
         .thumb {
@@ -45,9 +51,15 @@
             background: #fafafa;
             border-radius: 10px;
             padding: 1rem;
-            max-width: 240px;
+            max-width: 260px;
             text-align: left;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .mi-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
         }
 
         .mi-item h3 {
@@ -59,6 +71,13 @@
         .mi-item p {
             margin: 0 0 0.6rem 0;
             font-size: 0.9rem;
+        }
+
+        .details-link {
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         nav a {
@@ -89,13 +108,18 @@
         <img src="https://img.youtube.com/vi/RP98eYrjQ9A/maxresdefault.jpg" class="thumb"
             alt="How to Live Without a Face Thumbnail">
 
+        <p><strong>Role:</strong> director / story designer / visual designer / editor</p>
+
         <p>
-            A 3:10 experimental short film exploring identity, anonymity, and the fragmented ways
-            we present ourselves without ever showing our face.
+            A 3:10 experimental short film exploring identity without ever showing the protagonist’s face.
+            Created for “Media Sketchbook” at UC San Diego.
         </p>
 
         <p>
             <a href="https://youtu.be/RP98eYrjQ9A" target="_blank">Watch on YouTube →</a>
+        </p>
+        <p>
+            <a href="film-how-to-live-without-a-face.html" class="details-link">Project details →</a>
         </p>
     </section>
 
@@ -107,34 +131,46 @@
 
             <!-- Like an O...OMG -->
             <article class="mi-item">
-                <img src="https://img.youtube.com/vi/ZKl8X_sl41s/maxresdefault.jpg" class="thumb-small">
+                <img src="https://img.youtube.com/vi/ZKl8X_sl41s/maxresdefault.jpg" class="thumb-small"
+                    alt="Like an O...OMG thumbnail">
                 <h3>Like an O...OMG (2023)</h3>
-                <p>Motion-capture animation created in Unreal Engine.</p>
-                <a href="https://youtu.be/ZKl8X_sl41s" target="_blank">Watch →</a>
+                <p><strong>Role:</strong> actor / animator</p>
+                <p>Motion-capture animation of dancers on a subway, created in Unreal Engine.</p>
+                <a href="https://youtu.be/ZKl8X_sl41s" target="_blank">Watch →</a><br>
+                <a href="film-like-an-o-omg.html" class="details-link">Details →</a>
             </article>
 
-            <!-- UPDATED: Ouch -->
+            <!-- Ouch -->
             <article class="mi-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=Video+Preview" class="thumb-small">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=Video+Preview" class="thumb-small"
+                    alt="Ouch preview">
                 <h3>Ouch (2022)</h3>
-                <p>Collage-style animation about a character staging a concert inside their body.</p>
+                <p><strong>Role:</strong> video editor / story designer</p>
+                <p>Collage-style visual animation about holding a concert inside one’s own body.</p>
                 <a href="https://drive.google.com/file/d/173TiJsunvBWA4y13CaiTmNoVoB2xVEXr/view?usp=drive_link"
-                    target="_blank">View →</a>
+                    target="_blank">View →</a><br>
+                <a href="film-ouch.html" class="details-link">Details →</a>
             </article>
 
             <!-- Fluet -->
             <article class="mi-item">
-                <img src="https://img.youtube.com/vi/yRQG6l0ymW8/maxresdefault.jpg" class="thumb-small">
+                <img src="https://img.youtube.com/vi/yRQG6l0ymW8/maxresdefault.jpg" class="thumb-small"
+                    alt="Fluet thumbnail">
                 <h3>Fluet (2020)</h3>
-                <p>A stop-motion animation exploring a character's daily rhythm.</p>
-                <a href="https://youtu.be/yRQG6l0ymW8" target="_blank">Watch →</a>
+                <p><strong>Role:</strong> solo creator / editor</p>
+                <p>Stop-motion short following a flute-like character’s quiet daily journey.</p>
+                <a href="https://youtu.be/yRQG6l0ymW8" target="_blank">Watch →</a><br>
+                <a href="film-fluet.html" class="details-link">Details →</a>
             </article>
 
-            <!-- Walking (3D Animation) -->
+            <!-- Walking -->
             <article class="mi-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=3D+Animation" class="thumb-small">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=3D+Animation" class="thumb-small"
+                    alt="Walking preview">
                 <h3>Walking (2020)</h3>
-                <p>A character walk-cycle created in Autodesk Maya for Intro to 3D Animation.</p>
+                <p><strong>Role:</strong> animator / rigging</p>
+                <p>3D character walk-cycle created in Autodesk Maya for Intro to 3D Animation.</p>
+                <a href="film-walking.html" class="details-link">Details →</a>
             </article>
 
         </div>

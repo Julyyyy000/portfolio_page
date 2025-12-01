@@ -16,6 +16,12 @@
             max-width: 900px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
         }
 
         .thumb {
@@ -45,9 +51,15 @@
             background: #fafafa;
             border-radius: 10px;
             padding: 1rem;
-            max-width: 240px;
+            max-width: 260px;
             text-align: left;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .game-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
         }
 
         .game-item h3 {
@@ -61,8 +73,11 @@
             font-size: 0.9rem;
         }
 
-        .game-item a {
+        .details-link {
+            display: inline-block;
+            margin-top: 0.3rem;
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         nav a {
@@ -86,20 +101,25 @@
         <a href="index.html#contact">Contact</a>
     </nav>
 
-    <!-- FEATURED GAME — NIGHT BY EXAM -->
+    <!-- FEATURED GAME — NIGHT BY EXAM 2024 -->
     <section class="card">
         <h2>Featured Game · Night By Exam (2024)</h2>
 
         <img src="https://img.itch.zone/aW1nLzE4NDA5ODcwLnBuZw==/original/S68D%2F7.png" class="thumb"
             alt="Night By Exam Thumbnail">
 
+        <p><strong>Role:</strong> self-developed — programming / art / game design</p>
+
         <p>
-            A mental health–themed puzzle game exploring exam anxiety, intrusive thoughts,
-            and the emotional weight of academic pressure. Created for the 2024 Mental Health Champion event.
+            A 2D pixel-art puzzle game about exam anxiety, intrusive thoughts, and the emotional
+            weight of academic pressure. Developed in Unity for the 2024 Mental Health Champion event.
         </p>
 
         <p>
             <a href="https://jjjjuly.itch.io/night-by-exam" target="_blank">Play on Itch.io →</a>
+        </p>
+        <p>
+            <a href="game-night-by-exam-2024.html" class="details-link">Project details →</a>
         </p>
     </section>
 
@@ -109,113 +129,130 @@
 
         <div class="game-grid">
 
-            <!-- UPDATED: Night in the Church -->
-            <article class="game-item">
-                <img src="https://img.itch.zone/aW1nLzEyMTA5MjEwLnBuZw==/original/effwhd.png" class="thumb-small">
-                <h3>Night in the Church (2023)</h3>
-                <p>A reinterpretation of *Night in the Woods* with atmospheric level design.</p>
-                <a href="https://megan-d.itch.io/night-in-the-church" target="_blank">Play →</a>
-            </article>
-
             <!-- Missing Qin -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzIwNjIyODU4LnBuZw==/original/C3JsMM.png" class="thumb-small"
-                    alt="Missing Qin Thumbnail">
-                <h3>Missing Qin (2024)</h3>
-                <p>A narrative pixel mystery created for Ludum Dare 57.</p>
+                    alt="Missing Qin thumbnail">
+                <h3>Missing Qin (2025)</h3>
+                <p><strong>Role:</strong> game designer / programmer / background artist / narrative designer</p>
+                <p>Narrative pixel mystery following a student searching for a missing classmate.</p>
                 <a href="https://jjjjuly.itch.io/missing-qin" target="_blank">Play →</a>
-            </article>
-
-            <!-- Top Kitchen -->
-            <article class="game-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small">
-                <h3>Top Kitchen (2024)</h3>
-                <p>3D puzzle–simulation prototype.</p>
             </article>
 
             <!-- Make Them Cry -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzE0ODQ0Mzk2LnBuZw==/original/HC9tPv.png" class="thumb-small"
-                    alt="Make Them Cry Thumbnail">
+                    alt="Make Them Cry thumbnail">
                 <h3>Make Them Cry (2024)</h3>
-                <p>A hybrid 2D/3D narrative jam game mixing humor and emotional tension.</p>
+                <p><strong>Role:</strong> programmer / narrative designer</p>
+                <p>Hybrid 2D/3D narrative puzzle game made for Global Game Jam 2024.</p>
                 <a href="https://alicelong.itch.io/make-them-cry" target="_blank">Play →</a>
             </article>
-
-
 
             <!-- Shadow of the House -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzEyNzQ1MTQyLnBuZw==/original/e8TePK.png" class="thumb-small"
-                    alt="Shadow of the House Thumbnail">
+                    alt="Shadow of the House thumbnail">
                 <h3>Shadow of the House (2023)</h3>
-                <p>A haunted-house exploration game about eerie spaces and memory.</p>
+                <p><strong>Role:</strong> programmer</p>
+                <p>Narrative exploration game set in a haunted house (GMTK 2023).</p>
                 <a href="https://yarwhal.itch.io/shadow-of-the-house" target="_blank">Play →</a>
-            </article>
-
-            <!-- UPDATED: Go Back Home -->
-            <article class="game-item">
-                <img src="https://img.itch.zone/aW1nLzExMjQ2MTY3LnBuZw==/original/qvjzMB.png" class="thumb-small">
-                <h3>Go Back Home (2023)</h3>
-                <p>A cultural memory puzzle game created for Global Game Jam 2023.</p>
-                <a href="https://jjjjuly.itch.io/go-back-home" target="_blank">Play →</a>
             </article>
 
             <!-- The Uncooked -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzg4MjkzMjQuanBn/original/LD3QvD.jpg" class="thumb-small"
-                    alt="The Uncooked Thumbnail">
+                    alt="The Uncooked thumbnail">
                 <h3>The Uncooked (2022)</h3>
-                <p>A mysterious narrative game where the truth slowly reveals itself.</p>
+                <p><strong>Role:</strong> narrative designer</p>
+                <p>Mysterious adventure game submitted to Queer Games Bundle 2022.</p>
                 <a href="https://shanzhilee.itch.io/the-uncooked" target="_blank">Play →</a>
             </article>
 
             <!-- That Toilet…Feels So Good -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzg1ODg1NjUucG5n/original/bdRpmv.png" class="thumb-small"
-                    alt="That Toilet Feels So Good Thumbnail">
-                <h3>That Toilet…Feels So Good (2022)</h3>
-                <p>A surreal dreamlike jam game built around a single bathroom.</p>
+                    alt="That Toilet Feels So Good thumbnail">
+                <h3>That toilet…feels so good (2022)</h3>
+                <p><strong>Role:</strong> narrative designer / artist</p>
+                <p>2D pixel-art game depicting a nostalgic dream space (Ludum Dare 50).</p>
                 <a href="https://shanzhilee.itch.io/that-toilet-feels-so-good" target="_blank">Play →</a>
             </article>
 
             <!-- Finding Alex -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzg1NTQyMTQuanBn/original/bxGCZU.jpg" class="thumb-small"
-                    alt="Finding Alex Thumbnail">
+                    alt="Finding Alex thumbnail">
                 <h3>Finding Alex (2022)</h3>
-                <p>A horror escape-room game where you search for a missing friend.</p>
+                <p><strong>Role:</strong> game designer / narrative designer</p>
+                <p>Horror escape-room game submitted to Brackeys Jam 2022.</p>
                 <a href="https://shanzhilee.itch.io/finding-alex" target="_blank">Play →</a>
             </article>
 
             <!-- Love or Shit -->
             <article class="game-item">
                 <img src="https://img.itch.zone/aW1nLzg2NTY1NTEucG5n/original/DeYYmU.png" class="thumb-small"
-                    alt="Love or Shit Thumbnail">
+                    alt="Love or Shit thumbnail">
                 <h3>Love or Shit (2022)</h3>
-                <p>A chaotic visual novel mixed with labyrinth puzzles.</p>
+                <p><strong>Role:</strong> programmer / narrative designer</p>
+                <p>2D visual novel mixing chaotic dating and labyrinth puzzles (GGJ 2022).</p>
                 <a href="https://shanzhilee.itch.io/love-or-shit" target="_blank">Play →</a>
+            </article>
+
+            <!-- Night in the Church -->
+            <article class="game-item">
+                <img src="https://img.itch.zone/aW1nLzEyMTA5MjEwLnBuZw==/original/effwhd.png" class="thumb-small"
+                    alt="Night in the Church thumbnail">
+                <h3>Night in the Church (2023)</h3>
+                <p><strong>Role:</strong> programmer</p>
+                <p>Cover of <em>Night in the Woods</em> created for Intermediate Game Development.</p>
+                <a href="https://megan-d.itch.io/night-in-the-church" target="_blank">Play →</a>
+            </article>
+
+            <!-- Go Back Home -->
+            <article class="game-item">
+                <img src="https://img.itch.zone/aW1nLzExMjQ2MTY3LnBuZw==/original/qvjzMB.png" class="thumb-small"
+                    alt="Go Back Home thumbnail">
+                <h3>Go Back Home (2023)</h3>
+                <p><strong>Role:</strong> programmer / narrative designer</p>
+                <p>Mild horror puzzle game about revisiting cultural roots (GGJ 2023).</p>
+                <a href="https://jjjjuly.itch.io/go-back-home" target="_blank">Play →</a>
+            </article>
+
+            <!-- Top Kitchen -->
+            <article class="game-item">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
+                    alt="">
+                <h3>Top Kitchen (2024)</h3>
+                <p><strong>Role:</strong> 3D programmer / artist / level designer</p>
+                <p>3D puzzle/simulation prototype about running an interdimensional kitchen.</p>
             </article>
 
             <!-- Untitled Platformer -->
             <article class="game-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
+                    alt="">
                 <h3>Untitled Platformer (2021)</h3>
-                <p>GameMaker class platformer project.</p>
+                <p><strong>Role:</strong> programmer</p>
+                <p>GameMaker platformer created for an intro game development class.</p>
             </article>
 
             <!-- Night By Exam 2021 -->
             <article class="game-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
+                    alt="">
                 <h3>Night By Exam (2021)</h3>
-                <p>Early Processing prototype of the idea.</p>
+                <p><strong>Role:</strong> solo developer — programmer / artist</p>
+                <p>Early 2D click-based visual novel prototype created in Processing.</p>
             </article>
 
             <!-- Hensel and Gretel Remake -->
             <article class="game-item">
-                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small">
+                <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
+                    alt="">
                 <h3>Hensel and Gretel Remake (2022)</h3>
-                <p>A modern reinterpretation of the classic fairy tale.</p>
+                <p><strong>Role:</strong> solo developer — programmer / artist</p>
+                <p>2D narrative reinterpretation of the classic fairy tale in Unity.</p>
             </article>
 
         </div>
