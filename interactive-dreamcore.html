@@ -41,6 +41,58 @@
         nav a {
             margin-right: 1rem;
         }
+
+        /* Sliding image galleries (same style as interactive-art.html) */
+        .sub-gallery-title {
+            margin-top: 2rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .img-slider {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 0.4rem;
+            margin-top: 1rem;
+
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .img-slider img {
+            flex: 0 0 auto;
+            width: 260px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            scroll-snap-align: start;
+        }
+
+        .img-slider::before,
+        .img-slider::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .img-slider::before {
+            left: 0;
+            background: linear-gradient(to right, white 0%, transparent 100%);
+        }
+
+        .img-slider::after {
+            right: 0;
+            background: linear-gradient(to left, white 0%, transparent 100%);
+        }
     </style>
 </head>
 
@@ -59,7 +111,7 @@
         <h2>Overview</h2>
         <p><strong>Role:</strong> designer / creator / programmer / artist</p>
         <p>
-            Dreamcore is a four-folio interactive pop-up installation presenting abandoned dreamlands
+            Dreamcore is a two-folio interactive pop-up installation presenting abandoned dreamlands
             through physical paper engineering and responsive digital elements. The piece combines
             hand-drawn illustration, pop-up mechanisms, embedded electronics and digital motion to create
             a liminal “safe space” for exploring memory and mental health.
@@ -82,6 +134,29 @@
                 <iframe src="https://www.youtube.com/embed/ikAmvHQ_MYY" allowfullscreen></iframe>
             </div>
         </div>
+
+        <!-- Sliding galleries below videos -->
+
+        <h2>Installation Photos</h2>
+
+        <div class="sub-gallery-title">Classroom</div>
+        <div class="img-slider">
+            <!-- Update filenames to match your actual files -->
+            <img src="images/dreamcore/classroom/1.jpeg" alt="Dreamcore classroom 1">
+            <img src="images/dreamcore/classroom/2.jpeg" alt="Dreamcore classroom 2">
+            <img src="images/dreamcore/classroom/3.jpeg" alt="Dreamcore classroom 3">
+            <img src="images/dreamcore/classroom/4.jpeg" alt="Dreamcore classroom 4">
+        </div>
+
+        <div class="sub-gallery-title">Theatre</div>
+        <div class="img-slider">
+            <!-- Update filenames to match your actual files -->
+            <img src="images/dreamcore/theatre/1.jpeg" alt="Dreamcore theatre 1">
+            <img src="images/dreamcore/theatre/2.jpeg" alt="Dreamcore theatre 2">
+            <img src="images/dreamcore/theatre/3.jpeg" alt="Dreamcore theatre 3">
+            <img src="images/dreamcore/theatre/4.jpeg" alt="Dreamcore theatre 4">
+        </div>
+
     </section>
 
     <footer>

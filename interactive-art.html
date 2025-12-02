@@ -45,6 +45,61 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
+        /* -----------------------------
+           SLIDING IMAGE GALLERY
+        ------------------------------*/
+        .sub-gallery-title {
+            margin-top: 2rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .img-slider {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 0.4rem;
+            margin-top: 1rem;
+
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .img-slider img {
+            flex: 0 0 auto;
+            width: 260px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            scroll-snap-align: start;
+        }
+
+        /* soft fade edge mask */
+        .img-slider::before,
+        .img-slider::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .img-slider::before {
+            left: 0;
+            background: linear-gradient(to right, white 0%, transparent 100%);
+        }
+
+        .img-slider::after {
+            right: 0;
+            background: linear-gradient(to left, white 0%, transparent 100%);
+        }
+
         .details-link {
             display: inline-block;
             margin-top: 0.8rem;
@@ -72,16 +127,17 @@
         <a href="index.html#contact">Contact</a>
     </nav>
 
-    <!-- DREAMCORE / CREATIVE SAMPLE -->
+
+    <!-- ░░ DREAMCORE ░░ -->
     <section class="card">
         <h2>Dreamcore (Creative Sample)</h2>
         <p><strong>Role:</strong> designer / creator / programmer / artist</p>
         <p>
-            A four-folio interactive pop-up installation presenting abandoned dreamlands through
-            physical paper engineering and responsive digital elements. Solo project using
-            Arduino-based electronics and Unity-driven motion.
+            A two-folio interactive pop-up installation presenting abandoned dreamlands through
+            physical paper engineering and responsive digital elements.
         </p>
 
+        <!-- Videos -->
         <div class="gallery">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/0-KV_zLNsiA" allowfullscreen></iframe>
@@ -91,23 +147,43 @@
             </div>
         </div>
 
+        <!-- Classroom slider -->
+        <div class="sub-gallery-title">Classroom</div>
+        <div class="img-slider">
+            <img src="images/dreamcore/classroom/1.jpeg" alt="">
+            <img src="images/dreamcore/classroom/2.jpeg" alt="">
+            <img src="images/dreamcore/classroom/3.jpeg" alt="">
+            <img src="images/dreamcore/classroom/4.jpeg" alt="">
+        </div>
+
+        <!-- Theatre slider -->
+        <div class="sub-gallery-title">Theatre</div>
+        <div class="img-slider">
+            <img src="images/dreamcore/theatre/1.jpeg" alt="">
+            <img src="images/dreamcore/theatre/2.jpeg" alt="">
+            <img src="images/dreamcore/theatre/3.jpeg" alt="">
+            <img src="images/dreamcore/theatre/4.jpeg" alt="">
+        </div>
+
         <a href="interactive-dreamcore.html" class="details-link">Project details →</a>
     </section>
 
-    <!-- SAFE SPACE -->
+
+
+    <!-- ░░ SAFE SPACE ░░ -->
     <section class="card">
         <h2>Safe Space</h2>
-        <p><strong>Role:</strong> self-developed — programmer / crafting / artist</p>
+        <p><strong>Role:</strong> programmer / artist / set crafting</strong></p>
         <p>
             A projection-mapping interactive installation about uncertain memories experienced by
-            someone living with mental illness. A physical corner of a room becomes a responsive,
-            fragile “safe space” using TouchDesigner-driven visuals and handmade set pieces.
+            someone living with mental illness.
         </p>
 
-        <p>
+        <p style="margin-top:1.2rem;">
             <a href="https://vimeo.com/830620391" target="_blank">View documentation →</a>
         </p>
     </section>
+
 
     <footer>
         <p>&copy; 2024 June Shi. All rights reserved.</p>
