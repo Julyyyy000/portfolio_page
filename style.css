@@ -1,20 +1,31 @@
-/* ---------- Base Styles ---------- */
+/* ---------- Base Styles & Palette ---------- */
 :root {
-  --brand: #007acc;
-  --brand-dark: #005fa3;
-  --text: #333;
-  --bg: #f4f4f9;
+  /* Palette */
+  --egg: #F1E9DA;
+  --pink: #DD99BB;
+  --coffee: #170312;
+  --granite: #897A80;
+  --mauve: #5E4C5A;
 
-  /* Responsive animation size (make it big/snazzy) */
+  --brand: var(--mauve);
+  --brand-dark: var(--coffee);
+  --brand-soft: var(--pink);
+  --text: var(--coffee);
+  --bg: var(--egg);
+
+  /* For dress-up animation block */
   --anim-size: clamp(220px, 45vmin, 640px);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 0 80px;            /* room for fixed footer */
+  padding: 0 0 80px;
+  /* room for fixed footer */
   background-color: var(--bg);
   color: var(--text);
 }
@@ -38,7 +49,10 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover { text-decoration: underline; }
+nav a:hover {
+  text-decoration: underline;
+  color: var(--brand-dark);
+}
 
 section {
   padding: 2rem;
@@ -56,7 +70,7 @@ footer {
   width: 100%;
 }
 
-/* ---------- Generic Buttons (you can reuse anywhere) ---------- */
+/* ---------- Buttons ---------- */
 button {
   padding: 10px 20px;
   background-color: var(--brand);
@@ -66,34 +80,207 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-button:hover { background-color: var(--brand-dark); }
-
-/* ---------- (Legacy) Animation container with side buttons ----------
-   Kept for compatibility; safe to remove if not used anywhere. */
-.animation-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 2rem;
+button:hover {
+  background-color: var(--brand-dark);
+  transform: translateY(-1px);
 }
-.button-controls-left,
-.button-controls-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+/* ---------- Card + bottom-right footer ---------- */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.button-controls-left { margin-right: 20px; }
-.button-controls-right { margin-left: 20px; }
 
-/* ---------- About: Animation left, text/buttons right ---------- */
+/* Only hover (lift) when the "Click for more" link is hovered */
+.card:has(.card-footer a:hover) {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* footer area inside card */
+.card-footer {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* link style */
+.card-footer a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Thumbnails */
+.thumb,
+.detail-thumb {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumb-small {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Grids for cards (games, moving image, etc.) */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.grid-item {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 260px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.grid-item h3 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.grid-item p {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.details-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ---------- Gallery & Video ---------- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+/* ---------- Video Embeds (shared) ---------- */
+.video-container {
+  position: relative;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* When video containers live in a flex gallery (index / interactive art) */
+.gallery .video-container {
+  flex: 1 1 320px;
+  max-width: 480px;
+  margin: 0;
+  /* use gallery gap instead */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ---------- Dreamcore image slider ---------- */
+.sub-gallery-title {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.img-slider {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0.4rem;
+  margin-top: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.img-slider img {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  scroll-snap-align: start;
+}
+
+.img-slider::before,
+.img-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.img-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+.img-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+/* ---------- Dress-up animation block (home page) ---------- */
 .about-wrapper {
   display: grid;
-  grid-template-columns: auto 1fr;  /* animation column, then flexible text */
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 48px;
   padding: 2rem 0;
@@ -104,7 +291,6 @@ button:hover { background-color: var(--brand-dark); }
   justify-content: center;
 }
 
-/* Layered GIF animation box */
 .animation-stack {
   position: relative;
   width: var(--anim-size);
@@ -112,106 +298,48 @@ button:hover { background-color: var(--brand-dark); }
   flex-shrink: 0;
 }
 
-/* Each animated layer fills the box */
 .animation-layer {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;   /* keep full image visible */
-  pointer-events: none;       /* don’t block clicks */
-  image-rendering: pixelated; /* optional: nice for line/pixel art */
+  background-size: contain;
+  pointer-events: none;
+  image-rendering: pixelated;
 }
 
-/* Stacking order: bottom -> top */
-.layer-bg   { z-index: 0; }
-.layer-skin { z-index: 1; }
-.layer-nose { z-index: 2; }
-.layer-lip  { z-index: 3; }
-.layer-hair { z-index: 4; }
+.layer-bg {
+  z-index: 0;
+}
 
-/* Right column: buttons for cycling styles */
-.about-right h2 { margin-top: 0; }
+.layer-skin {
+  z-index: 1;
+}
+
+.layer-nose {
+  z-index: 2;
+}
+
+.layer-lip {
+  z-index: 3;
+}
+
+.layer-hair {
+  z-index: 4;
+}
 
 .button-grid {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(120px, 1fr)); /* 2x2 */
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
   gap: 12px 18px;
   max-width: 360px;
-}
-
-.layer-cycle {
-  /* inherits base button styles */
-}
-
-/* ---------- Projects / Categories ---------- */
-.category {
-  background: #fff;
-  padding: 30px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.gallery img {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.learn-more-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: var(--brand);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.learn-more-btn:hover { background-color: var(--brand-dark); }
-
-/* ---------- Video Embeds ---------- */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;  /* 16:9 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  background: #000;
-  border-radius: 8px;
-}
-.video-container iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .about-wrapper {
-    grid-template-columns: 1fr; /* stack */
+    grid-template-columns: 1fr;
     gap: 24px;
-  }
-}
-
-@media (max-width: 640px) {
-  .animation-container {
-    flex-direction: column; /* for legacy container if used */
-    gap: 16px;
   }
 }

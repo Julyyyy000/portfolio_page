@@ -6,98 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreamcore | Interactive Art | June Shi</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .detail-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem auto;
-            max-width: 900px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .video-container {
-            flex: 1 1 400px;
-            max-width: 480px;
-            aspect-ratio: 16/9;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        nav a {
-            margin-right: 1rem;
-        }
-
-        /* Sliding image galleries (same style as interactive-art.html) */
-        .sub-gallery-title {
-            margin-top: 2rem;
-            font-size: 1.15rem;
-            font-weight: 600;
-        }
-
-        .img-slider {
-            position: relative;
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            display: flex;
-            gap: 1rem;
-            padding-bottom: 0.4rem;
-            margin-top: 1rem;
-
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .img-slider img {
-            flex: 0 0 auto;
-            width: 260px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            scroll-snap-align: start;
-        }
-
-        .img-slider::before,
-        .img-slider::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 40px;
-            height: 100%;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .img-slider::before {
-            left: 0;
-            background: linear-gradient(to right, white 0%, transparent 100%);
-        }
-
-        .img-slider::after {
-            right: 0;
-            background: linear-gradient(to left, white 0%, transparent 100%);
-        }
-    </style>
 </head>
 
 <body>
-
     <header>
         <h1>Dreamcore</h1>
     </header>
@@ -113,11 +24,11 @@
         <p>
             Dreamcore is a two-folio interactive pop-up installation presenting abandoned dreamlands
             through physical paper engineering and responsive digital elements. The piece combines
-            hand-drawn illustration, pop-up mechanisms, embedded electronics and digital motion to create
+            hand-drawn illustration, pop-up mechanisms, embedded electronics, and digital motion to create
             a liminal “safe space” for exploring memory and mental health.
         </p>
 
-        <h2>Medium & Tools</h2>
+        <h2>Medium &amp; Tools</h2>
         <ul>
             <li>Hand-drawn ink and acrylic marker on paper</li>
             <li>Custom pop-up and paper mechanisms</li>
@@ -135,13 +46,10 @@
             </div>
         </div>
 
-        <!-- Sliding galleries below videos -->
-
         <h2>Installation Photos</h2>
 
         <div class="sub-gallery-title">Classroom</div>
         <div class="img-slider">
-            <!-- Update filenames to match your actual files -->
             <img src="images/dreamcore/classroom/1.jpeg" alt="Dreamcore classroom 1">
             <img src="images/dreamcore/classroom/2.jpeg" alt="Dreamcore classroom 2">
             <img src="images/dreamcore/classroom/3.jpeg" alt="Dreamcore classroom 3">
@@ -150,19 +58,16 @@
 
         <div class="sub-gallery-title">Theatre</div>
         <div class="img-slider">
-            <!-- Update filenames to match your actual files -->
             <img src="images/dreamcore/theatre/1.jpeg" alt="Dreamcore theatre 1">
             <img src="images/dreamcore/theatre/2.jpeg" alt="Dreamcore theatre 2">
             <img src="images/dreamcore/theatre/3.jpeg" alt="Dreamcore theatre 3">
             <img src="images/dreamcore/theatre/4.jpeg" alt="Dreamcore theatre 4">
         </div>
-
     </section>
 
     <footer>
         <p>&copy; 2024 June Shi. All rights reserved.</p>
     </footer>
-
 </body>
 
 </html>

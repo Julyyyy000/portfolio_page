@@ -16,10 +16,12 @@
             max-width: 900px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            position: relative;
             transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
 
-        .card:hover {
+        /* hover only when the “click for more” is hovered */
+        .card:has(.card-more-link:hover) {
             transform: translateY(-4px);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
         }
@@ -34,7 +36,6 @@
         .video-container {
             flex: 1 1 400px;
             max-width: 480px;
-            aspect-ratio: 16/9;
         }
 
         .video-container iframe {
@@ -45,10 +46,19 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .details-link {
-            display: inline-block;
-            margin-top: 0.8rem;
+        .card-footer {
+            margin-top: 1.2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card-more-link {
             font-weight: 600;
+            text-decoration: none;
+        }
+
+        .card-more-link:hover {
+            text-decoration: underline;
         }
 
         nav a {
@@ -91,7 +101,9 @@
             </div>
         </div>
 
-        <a href="interactive-dreamcore.html" class="details-link">Project details →</a>
+        <div class="card-footer">
+            <a href="interactive-dreamcore.html" class="card-more-link">Click for more →</a>
+        </div>
     </section>
 
     <!-- ░░ SAFE SPACE ░░ -->
@@ -103,7 +115,9 @@
             emotional landscape. Created using TouchDesigner and hand-built set pieces.
         </p>
 
-        <a href="interactive-safe-space.html" class="details-link">Project details →</a>
+        <div class="card-footer">
+            <a href="interactive-safe-space.html" class="card-more-link">Click for more →</a>
+        </div>
     </section>
 
     <footer>

@@ -6,56 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>June Shi | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .featured-section {
-      background: white;
-      padding: 1.8rem;
-      border-radius: 12px;
-      margin: 2rem auto;
-      max-width: 900px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .featured-section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-    }
-
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .video-container {
-      flex: 1 1 400px;
-      max-width: 480px;
-      aspect-ratio: 16/9;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .thumb {
-      width: 100%;
-      max-width: 420px;
-      border-radius: 10px;
-      margin-top: 0.8rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    nav a {
-      margin-right: 1rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -64,7 +14,6 @@
     <p>Interactive art · games · moving image</p>
   </header>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="interactive-art.html">Interactive Art</a>
     <a href="games.html">Games</a>
@@ -73,8 +22,8 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- FEATURED: INTERACTIVE ART / DREAMCORE -->
-  <section class="featured-section">
+  <!-- Dreamcore highlight -->
+  <section class="card">
     <h2>Dreamcore · Interactive Art Highlight</h2>
     <p><strong>Role:</strong> designer / creator / programmer / artist</p>
     <p>
@@ -91,14 +40,14 @@
       </div>
     </div>
 
-    <p style="margin-top: 1rem;">
-      <a href="interactive-dreamcore.html">Project details →</a> ·
-      <a href="interactive-art.html">More interactive art →</a>
-    </p>
+    <div class="card-footer">
+      <a href="interactive-art.html">Click for more →</a>
+    </div>
+
   </section>
 
-  <!-- FEATURED: GAMES / MISSING QIN -->
-  <section class="featured-section">
+  <!-- Games highlight -->
+  <section class="card">
     <h2>Missing Qin · Game Highlight</h2>
     <p><strong>Role:</strong> game designer / programmer / background artist / narrative designer</p>
     <p>
@@ -107,14 +56,14 @@
     </p>
     <img src="https://img.itch.zone/aW1nLzIwNjIyODU4LnBuZw==/original/C3JsMM.png" alt="Missing Qin thumbnail"
       class="thumb">
-    <p style="margin-top: 0.8rem;">
-      <a href="https://jjjjuly.itch.io/missing-qin" target="_blank">Play on Itch.io →</a> ·
-      <a href="games.html">See more games →</a>
-    </p>
+    <div class="card-footer">
+      <a href="games.html">Click for more →</a>
+    </div>
+
   </section>
 
-  <!-- FEATURED: MOVING IMAGE / HOW TO LIVE WITHOUT A FACE -->
-  <section class="featured-section">
+  <!-- Moving image highlight -->
+  <section class="card">
     <h2>How to Live Without a Face · Moving Image Highlight</h2>
     <p><strong>Role:</strong> director / story designer / visual designer / editor</p>
     <p>
@@ -123,30 +72,17 @@
     </p>
     <img src="https://img.youtube.com/vi/RP98eYrjQ9A/maxresdefault.jpg" alt="How to Live Without a Face thumbnail"
       class="thumb">
-    <p style="margin-top: 0.8rem;">
-      <a href="https://youtu.be/RP98eYrjQ9A" target="_blank">Watch on YouTube →</a> ·
-      <a href="moving-image.html">More moving image work →</a>
-    </p>
-  </section>
+    <div class="card-footer">
+      <a href="moving-image.html">Click for more →</a>
+    </div>
 
-  <!-- CREATIVE SAMPLE LABEL (OPTIONAL TEXT) -->
-  <section class="featured-section">
-    <h2>Creative Sample</h2>
-    <p>
-      Dreamcore serves as my current creative sample, representing how I blend physical craft,
-      interactive systems, and narrative worldbuilding.
-    </p>
-    <p>
-      <a href="interactive-dreamcore.html">View Dreamcore details →</a>
-    </p>
   </section>
-
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section id="contact" class="featured-section">
     <h2>Contact</h2>
     <p>
-      You can reach me at:
-      <a href="mailto:junejingyingshi@gmail.com">junejingyingshi@gmail.com</a>
+      You can reach me at
+      <a href="mailto:junejingyingshi@gmail.com">junejingyingshi@gmail.com</a>.
     </p>
   </section>
 

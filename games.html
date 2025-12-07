@@ -6,88 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games | June Shi</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem auto;
-            max-width: 900px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-        }
-
-        .thumb {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .thumb-small {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 0.7rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-        }
-
-        .game-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .game-item {
-            background: #fafafa;
-            border-radius: 10px;
-            padding: 1rem;
-            max-width: 260px;
-            text-align: left;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
-        }
-
-        .game-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-        }
-
-        .game-item h3 {
-            margin-top: 0.2rem;
-            margin-bottom: 0.4rem;
-            font-size: 1.05rem;
-        }
-
-        .game-item p {
-            margin: 0 0 0.6rem 0;
-            font-size: 0.9rem;
-        }
-
-        .details-link {
-            display: inline-block;
-            margin-top: 0.3rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        nav a {
-            margin-right: 1rem;
-        }
-    </style>
 </head>
 
 <body>
-
     <header>
         <h1>Games</h1>
     </header>
@@ -101,36 +22,30 @@
         <a href="index.html#contact">Contact</a>
     </nav>
 
-    <!-- FEATURED GAME — NIGHT BY EXAM 2024 -->
+    <!-- Featured -->
     <section class="card">
         <h2>Featured Game · Night By Exam (2024)</h2>
-
-        <img src="https://img.itch.zone/aW1nLzE4NDA5ODcwLnBuZw==/original/S68D%2F7.png" class="thumb"
-            alt="Night By Exam Thumbnail">
-
+        <img src="https://img.itch.zone/aW1nLzE4NDA5ODcwLnBuZw==/original/S68D%2F7.png" alt="Night By Exam thumbnail"
+            class="thumb">
         <p><strong>Role:</strong> self-developed — programming / art / game design</p>
-
         <p>
             A 2D pixel-art puzzle game about exam anxiety, intrusive thoughts, and the emotional
             weight of academic pressure. Developed in Unity for the 2024 Mental Health Champion event.
         </p>
 
-        <p>
-            <a href="https://jjjjuly.itch.io/night-by-exam" target="_blank">Play on Itch.io →</a>
-        </p>
-        <p>
-            <a href="game-night-by-exam-2024.html" class="details-link">Project details →</a>
-        </p>
+        <div class="card-footer">
+            <a href="game-night-by-exam-2024.html">Click for more →</a>
+        </div>
+
     </section>
 
-    <!-- OTHER GAMES -->
+    <!-- More games -->
     <section class="card">
         <h2>More Game Projects</h2>
 
-        <div class="game-grid">
+        <div class="grid">
 
-            <!-- Missing Qin -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzIwNjIyODU4LnBuZw==/original/C3JsMM.png" class="thumb-small"
                     alt="Missing Qin thumbnail">
                 <h3>Missing Qin (2025)</h3>
@@ -139,8 +54,7 @@
                 <a href="https://jjjjuly.itch.io/missing-qin" target="_blank">Play →</a>
             </article>
 
-            <!-- Make Them Cry -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzE0ODQ0Mzk2LnBuZw==/original/HC9tPv.png" class="thumb-small"
                     alt="Make Them Cry thumbnail">
                 <h3>Make Them Cry (2024)</h3>
@@ -149,8 +63,7 @@
                 <a href="https://alicelong.itch.io/make-them-cry" target="_blank">Play →</a>
             </article>
 
-            <!-- Shadow of the House -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzEyNzQ1MTQyLnBuZw==/original/e8TePK.png" class="thumb-small"
                     alt="Shadow of the House thumbnail">
                 <h3>Shadow of the House (2023)</h3>
@@ -159,8 +72,7 @@
                 <a href="https://yarwhal.itch.io/shadow-of-the-house" target="_blank">Play →</a>
             </article>
 
-            <!-- The Uncooked -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzg4MjkzMjQuanBn/original/LD3QvD.jpg" class="thumb-small"
                     alt="The Uncooked thumbnail">
                 <h3>The Uncooked (2022)</h3>
@@ -169,8 +81,7 @@
                 <a href="https://shanzhilee.itch.io/the-uncooked" target="_blank">Play →</a>
             </article>
 
-            <!-- That Toilet…Feels So Good -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzg1ODg1NjUucG5n/original/bdRpmv.png" class="thumb-small"
                     alt="That Toilet Feels So Good thumbnail">
                 <h3>That toilet…feels so good (2022)</h3>
@@ -179,8 +90,7 @@
                 <a href="https://shanzhilee.itch.io/that-toilet-feels-so-good" target="_blank">Play →</a>
             </article>
 
-            <!-- Finding Alex -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzg1NTQyMTQuanBn/original/bxGCZU.jpg" class="thumb-small"
                     alt="Finding Alex thumbnail">
                 <h3>Finding Alex (2022)</h3>
@@ -189,8 +99,7 @@
                 <a href="https://shanzhilee.itch.io/finding-alex" target="_blank">Play →</a>
             </article>
 
-            <!-- Love or Shit -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzg2NTY1NTEucG5n/original/DeYYmU.png" class="thumb-small"
                     alt="Love or Shit thumbnail">
                 <h3>Love or Shit (2022)</h3>
@@ -199,8 +108,7 @@
                 <a href="https://shanzhilee.itch.io/love-or-shit" target="_blank">Play →</a>
             </article>
 
-            <!-- Night in the Church -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzEyMTA5MjEwLnBuZw==/original/effwhd.png" class="thumb-small"
                     alt="Night in the Church thumbnail">
                 <h3>Night in the Church (2023)</h3>
@@ -209,8 +117,7 @@
                 <a href="https://megan-d.itch.io/night-in-the-church" target="_blank">Play →</a>
             </article>
 
-            <!-- Go Back Home -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://img.itch.zone/aW1nLzExMjQ2MTY3LnBuZw==/original/qvjzMB.png" class="thumb-small"
                     alt="Go Back Home thumbnail">
                 <h3>Go Back Home (2023)</h3>
@@ -219,8 +126,7 @@
                 <a href="https://jjjjuly.itch.io/go-back-home" target="_blank">Play →</a>
             </article>
 
-            <!-- Top Kitchen -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
                     alt="">
                 <h3>Top Kitchen (2024)</h3>
@@ -228,8 +134,7 @@
                 <p>3D puzzle/simulation prototype about running an interdimensional kitchen.</p>
             </article>
 
-            <!-- Untitled Platformer -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
                     alt="">
                 <h3>Untitled Platformer (2021)</h3>
@@ -237,8 +142,7 @@
                 <p>GameMaker platformer created for an intro game development class.</p>
             </article>
 
-            <!-- Night By Exam 2021 -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
                     alt="">
                 <h3>Night By Exam (2021)</h3>
@@ -246,8 +150,7 @@
                 <p>Early 2D click-based visual novel prototype created in Processing.</p>
             </article>
 
-            <!-- Hensel and Gretel Remake -->
-            <article class="game-item">
+            <article class="grid-item">
                 <img src="https://via.placeholder.com/400x300/eeeeee/555555?text=No+Thumbnail" class="thumb-small"
                     alt="">
                 <h3>Hensel and Gretel Remake (2022)</h3>
@@ -261,7 +164,6 @@
     <footer>
         <p>&copy; 2024 June Shi. All rights reserved.</p>
     </footer>
-
 </body>
 
 </html>
