@@ -10,19 +10,19 @@ function makeFrames(folder, prefix) {
 }
 
 // --- Base head frames ---
-const headFrames = makeFrames("images/avatar/head", "head-");
+const headFrames = makeFrames("Images/avatar/head", "head-");
 
 // --- Hair styles (add/remove styles here) ---
 const hairSets = [
     { key: "none", frames: null },
-    { key: "style-1", frames: makeFrames("images/avatar/hair-style-1", "hair-style-1-") },
-    { key: "style-2", frames: makeFrames("images/avatar/hair-style-2", "hair-style-2-") }
+    { key: "style-1", frames: makeFrames("Images/avatar/hair-style-1", "hair-style-1-") },
+    { key: "style-2", frames: makeFrames("Images/avatar/hair-style-2", "hair-style-2-") }
 ];
 
 // --- Face decor (combined nose+lips) ---
 const decorSets = [
     { key: "none", frames: null },
-    { key: "face-decor", frames: makeFrames("images/avatar/face-decor", "face-decor-") }
+    { key: "face-decor", frames: makeFrames("Images/avatar/face-decor", "face-decor-") }
 ];
 
 // --- State ---
@@ -45,7 +45,7 @@ function applyLayer(imgEl, framesOrNull) {
     if (!imgEl) return;
 
     if (!framesOrNull) {
-        imgEl.src = "images/avatar/blank.png";
+        imgEl.src = "Images/avatar/blank.png";
         imgEl.style.opacity = 0;
         return;
     }
