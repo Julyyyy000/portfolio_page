@@ -22,6 +22,58 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT + MINIGAME -->
+  <section class="card" id="about">
+    <div class="about-wrapper">
+
+      <!-- LEFT: rotating portrait minigame -->
+      <div class="avatar-frame">
+        <!-- LEFT side buttons -->
+        <div class="side-controls side-left">
+          <button type="button" class="triangle-btn triangle-left" data-control="hair" data-dir="-1"
+            aria-label="Previous hair"></button>
+
+          <button type="button" class="triangle-btn triangle-left" data-control="decor" data-dir="-1"
+            aria-label="Previous face decor"></button>
+        </div>
+
+        <!-- Portrait -->
+        <div class="animation-stack">
+          <img id="avatar-head" class="animation-layer layer-head" src="images/avatar/head/head-0.png"
+            alt="Rotating head base" />
+
+          <img id="avatar-hair" class="animation-layer layer-hair" src="images/avatar/hair-style-1/hair-style-1-0.png"
+            alt="Hair layer" />
+
+          <img id="avatar-decor" class="animation-layer layer-decor" src="images/avatar/blank.png"
+            alt="Face decor layer" />
+        </div>
+
+        <!-- RIGHT side buttons -->
+        <div class="side-controls side-right">
+          <button type="button" class="triangle-btn triangle-right" data-control="hair" data-dir="1"
+            aria-label="Next hair"></button>
+
+          <button type="button" class="triangle-btn triangle-right" data-control="decor" data-dir="1"
+            aria-label="Next face decor"></button>
+        </div>
+      </div>
+
+
+      <!-- RIGHT: about text -->
+      <div class="about-right">
+        <h2>About</h2>
+        <p>
+          My name is June, I create interactive art and narrative games about memory, mental health, liminal spaces, and
+          gender identity.
+        </p>
+      </div>
+
+    </div>
+  </section>
+  <!-- END ABOUT -->
+
+
   <!-- Dreamcore highlight -->
   <section class="card">
     <h2>Dreamcore · Interactive Art Highlight</h2>
@@ -85,6 +137,7 @@
       <a href="mailto:junejingyingshi@gmail.com">junejingyingshi@gmail.com</a>.
     </p>
   </section>
+  <script src="avatar-rotate.js"></script>
 
   <footer>
     <p>&copy; 2024 June Shi. All rights reserved.</p>

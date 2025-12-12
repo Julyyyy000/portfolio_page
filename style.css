@@ -343,3 +343,107 @@ button:hover {
     gap: 24px;
   }
 }
+
+/* ---------- Minigame layer order ---------- */
+.layer-head {
+  z-index: 1;
+}
+
+.layer-hair {
+  z-index: 2;
+}
+
+.layer-decor {
+  z-index: 3;
+}
+
+/* Frame wrapper so buttons can sit on both sides */
+.avatar-frame {
+  display: grid;
+  grid-template-columns: 44px auto 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Vertical stack of buttons on each side */
+.side-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make the triangles slightly easier to click */
+.triangle-btn {
+  width: 36px;
+  height: 36px;
+}
+
+/* ---------- Triangle buttons ---------- */
+.triangle-btn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.triangle-btn::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: var(--brand);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+/* left-facing triangle */
+.triangle-left::before {
+  clip-path: polygon(75% 0%, 25% 50%, 75% 100%);
+}
+
+/* right-facing triangle */
+.triangle-right::before {
+  clip-path: polygon(25% 0%, 75% 50%, 25% 100%);
+}
+
+.triangle-btn:hover::before {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- About minigame layout ---------- */
+.about-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ---------- Fixed viewport for avatar ---------- */
+.animation-stack {
+  position: relative;
+  width: 320px;
+  /* 👈 adjust later if needed */
+  height: 320px;
+  /* 👈 MUST be fixed */
+  overflow: hidden;
+  /* 👈 prevents spill */
+  margin: 0 auto;
+}
+
+.animation-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  pointer-events: none;
+  image-rendering: auto;
+}
