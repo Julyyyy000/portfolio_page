@@ -258,24 +258,9 @@ button:hover {
 
 .img-slider::before,
 .img-slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 40px;
-  height: 100%;
-  pointer-events: none;
-  z-index: 3;
+  content: none;
 }
 
-.img-slider::before {
-  left: 0;
-  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
-}
-
-.img-slider::after {
-  right: 0;
-  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
-}
 
 /* ---------- Dress-up animation block (home page) ---------- */
 .about-wrapper {
