@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* Light page-specific layout */
+        /* Page-specific layout */
         .mit-intro {
             max-width: 900px;
             margin: 2rem auto 0;
@@ -74,35 +74,164 @@
         <a href="index.html#contact">Contact</a>
     </nav>
 
+    <!-- INTRO -->
     <section class="mit-intro">
         <h2>Focus</h2>
         <p>
             I build interactive worlds that mix physical craft and digital systems—often about memory, identity,
-            and the emotional logic of “liminal” spaces.
+            and the emotional logic of liminal spaces.
         </p>
         <div class="mit-links">
-            <a href="interactive-dreamcore.html">Dreamcore →</a>
-            <a href="interactive-safe-space.html">Safe Space →</a>
-            <a href="game-night-by-exam-2024.html">Night By Exam →</a>
-            <a href="https://alicelong.itch.io/make-them-cry" target="_blank" rel="noopener">Make Them Cry →</a>
+            <a href="#dreamcore">Dreamcore →</a>
+            <a href="#safe-space">Safe Space →</a>
+            <a href="#night-by-exam">Night By Exam →</a>
+            <a href="#make-them-cry">Make Them Cry →</a>
+            <a href="#missing-qin">Missing Qin →</a>
         </div>
     </section>
 
-    <!-- DREAMCORE -->
-    <section class="card">
-        <h2>Dreamcore (Interactive Pop-up + Electronics)</h2>
-        <p><strong>Role:</strong> designer / creator / programmer / artist</p>
-        <p>
-            A two-folio interactive pop-up installation combining hand-drawn paper engineering and responsive
-            digital animation to explore abandoned dreamlands and emotional “safe space” feelings.
-        </p>
+    <!-- ================= DREAMCORE ================= -->
+    <section class="card" id="dreamcore">
+        <header class="proj-header">
+            <h2 class="proj-title">Dreamcore</h2>
+            <p class="proj-subtitle">Two-Folio Interactive Pop-Up Installation</p>
+            <p class="proj-date">November 2025</p>
+        </header>
 
-        <div class="mit-grid">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/0-KV_zLNsiA" allowfullscreen></iframe>
+        <dl class="proj-meta">
+            <div class="meta-row">
+                <dt>Medium</dt>
+                <dd>
+                    Hand-drawn illustration, paper engineering, digital editing, inkpen &amp; acrylic marker craft,
+                    Arduino IDE (ESP32), color sensor, rotary input, TFT display; video + still images
+                </dd>
             </div>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ikAmvHQ_MYY" allowfullscreen></iframe>
+            <div class="meta-row">
+                <dt>Role</dt>
+                <dd>Solo-developed — concept, illustration, paper engineering, electronics, programming</dd>
+            </div>
+        </dl>
+
+        <div class="proj-section">
+            <h3>Project Overview</h3>
+            <p>
+                Dreamcore explores liminal spaces as psychological safe zones—quiet, transitional environments that
+                feel both familiar and unreal. The project takes the form of a two-folio interactive pop-up installation
+                that blends hand-crafted paper engineering with responsive digital systems.
+            </p>
+            <p>
+                All environments were hand-drawn, digitally edited, and printed onto 100lb paper to preserve tactile ink
+                texture while accommodating embedded electronics. Rather than presenting narrative through a screen
+                alone,
+                Dreamcore asks whether an analog, handcrafted world—augmented through Arduino-based interaction—can
+                evoke
+                the uncanny softness, nostalgia, and ambiguity associated with dreamcore aesthetics.
+            </p>
+        </div>
+
+        <div class="proj-links">
+            <a href="interactive-dreamcore.html">Documentation (Project Page) →</a>
+        </div>
+
+        <div class="proj-section">
+            <h3>Video Demos</h3>
+
+            <div class="mit-grid">
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0-KV_zLNsiA" title="Dreamcore folio 1 demo"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="vid-caption">Folio page 1 <span class="vid-runtime">Runtime: 0:54</span></p>
+                </div>
+
+                <div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ikAmvHQ_MYY" title="Dreamcore folio 2 demo"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="vid-caption">Folio page 2 <span class="vid-runtime">Runtime: 1:42</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="proj-section">
+            <p>
+                The first folio opens to an empty classroom and a lone bicycle selling balloons. A color sensor
+                connected to an ESP32
+                microcontroller detects the viewer’s interaction: when a balloon object is placed “outside” the window,
+                animated balloons
+                drift into a dreamlike sky displayed on a TFT screen. The interaction is intentionally simple, allowing
+                a single physical
+                gesture to produce a quiet but emotionally resonant response.
+            </p>
+
+            <!-- Dreamcore Gallery 1 -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Dreamcore — Folio 1 Stills</div>
+                <div class="img-slider">
+                    <img src="Images/mit/dreamcore/folio1-01.jpg" alt="Dreamcore folio 1 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio1-02.jpg" alt="Dreamcore folio 1 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio1-03.jpg" alt="Dreamcore folio 1 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio1-04.jpg" alt="Dreamcore folio 1 still" loading="lazy" />
+                </div>
+            </div>
+
+            <p>
+                The second folio reveals fading storefronts and a silent movie theater. Using a rotary input, viewers
+                can tilt the TFT
+                display toward themselves—confronting their own presence within the emptiness—or watch a half-forgotten
+                moment: a kiddie ride
+                outside an abandoned shop slowly rocking on its own. These interactions are designed to feel restrained
+                rather than instructional,
+                encouraging reflection rather than task-based engagement.
+            </p>
+
+            <!-- Dreamcore Gallery 2 -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Dreamcore — Folio 2 Stills</div>
+                <div class="img-slider">
+                    <img src="Images/mit/dreamcore/folio2-01.jpg" alt="Dreamcore folio 2 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio2-02.jpg" alt="Dreamcore folio 2 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio2-03.jpg" alt="Dreamcore folio 2 still" loading="lazy" />
+                    <img src="Images/mit/dreamcore/folio2-04.jpg" alt="Dreamcore folio 2 still" loading="lazy" />
+                </div>
+            </div>
+
+            <p>
+                Dreamcore integrates pop-up paper structures, origami-based mechanisms, hand illustration, and physical
+                computing into a single
+                system. I worked with the Arduino IDE on an ESP32 microcontroller, integrating color sensors, rotary
+                inputs, and TFT displays with
+                Processing-based visuals.
+            </p>
+
+            <p>
+                Building the project required repeated cycles of cutting, folding, measuring, coding, redrawing, and
+                rebuilding. Pop-up stability,
+                sensor reliability, wiring layout, and screen placement were tested and revised through multiple
+                iterations. The physical constraints
+                of paper engineering directly informed the electronic system design, requiring careful coordination
+                between structure, circuitry, and code.
+            </p>
+
+            <p>
+                Through this process, I developed a workflow that balances precision with openness—designing interactive
+                systems that are structurally
+                sound while remaining emotionally ambiguous. Dreamcore ultimately reinforced my interest in creating
+                hybrid environments where meaning
+                emerges through the tension between analog craft and digital response.
+            </p>
+
+            <!-- Dreamcore Gallery 3 -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Dreamcore — Process &amp; Details</div>
+                <div class="img-slider">
+                    <img src="Images/mit/dreamcore/process-01.jpg" alt="Dreamcore process detail" loading="lazy" />
+                    <img src="Images/mit/dreamcore/process-02.jpg" alt="Dreamcore process detail" loading="lazy" />
+                    <img src="Images/mit/dreamcore/process-03.jpg" alt="Dreamcore process detail" loading="lazy" />
+                    <img src="Images/mit/dreamcore/process-04.jpg" alt="Dreamcore process detail" loading="lazy" />
+                </div>
             </div>
         </div>
 
@@ -111,24 +240,136 @@
         </div>
     </section>
 
-    <!-- SAFE SPACE -->
-    <section class="card">
-        <h2>Safe Space (Projection-Mapping Installation)</h2>
-        <p><strong>Role:</strong> self-developed — programmer / crafting / artist</p>
-        <p>
-            A projection-mapping installation transforming a physical room corner into a fragile emotional
-            environment—exploring comfort vs. instability.
-        </p>
+    <!-- ================= SAFE SPACE ================= -->
+    <section class="card" id="safe-space">
+        <header class="proj-header">
+            <h2 class="proj-title">Safe Space</h2>
+            <p class="proj-subtitle">Interactive Projection-Mapped Installation</p>
+            <p class="proj-date">May 2023</p>
+        </header>
 
-        <div class="mit-grid">
+        <dl class="proj-meta">
+            <div class="meta-row">
+                <dt>Medium</dt>
+                <dd>
+                    Projection mapping, clay sculpture, wood construction, digital animation, TouchDesigner,
+                    keyboard-based interaction, sound design
+                </dd>
+            </div>
+            <div class="meta-row">
+                <dt>Role</dt>
+                <dd>
+                    Solo-developed — concept, physical fabrication, animation, interaction design, system programming
+                </dd>
+            </div>
+        </dl>
+
+        <div class="proj-section">
+            <h3>Project Overview</h3>
+            <p>
+                Safe Space is an interactive projection-mapped installation that explores how anxiety and uncertainty
+                can destabilize one’s sense of reality—even within spaces typically associated with comfort and safety.
+                The work takes place inside a miniature bedroom constructed from wooden boards and clay-made furniture,
+                onto which animated imagery and sound are projected.
+            </p>
+            <p>
+                The project centers on a character who lives within this room. As viewers interact with different
+                objects, the memories associated with those objects change, and the character responds through shifting
+                facial expressions and breathing patterns. While a bedroom is often understood as a quiet getaway, Safe
+                Space challenges this assumption by revealing how internal doubt and cognitive instability can transform
+                even the most familiar environments into sources of distress.
+            </p>
+            <p>
+                Rather than telling a fixed narrative, the installation invites viewers to experience a gradual
+                emotional shift—from curiosity to unease—through interaction, sound, and visual disruption.
+            </p>
+        </div>
+
+        <div class="proj-links">
+            <a href="interactive-safe-space.html">Documentation (Project Page) →</a>
+        </div>
+
+        <div class="proj-section">
+            <h3>Video Demo</h3>
             <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1145729657" title="Safe Space demo" allowfullscreen>
-                </iframe>
+                <iframe src="https://player.vimeo.com/video/1145729657" title="Safe Space demo"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="vid-caption">Runtime: <span class="vid-runtime">1:00</span></p>
+        </div>
+
+        <div class="proj-section">
+            <p>
+                The physical environment was intentionally handcrafted. Furniture and the character were sculpted from
+                paper clay, creating neutral, unfinished surfaces that function as blank canvases for projected memory.
+                Early prototypes explored 3D-printed forms and Unity-based projection, but these were abandoned in favor
+                of clay and wood, which better supported the project’s intimacy and emotional tone.
+            </p>
+
+            <p>
+                Projection mapping required extensive experimentation. I worked with multiple projector
+                configurations—eventually combining a front-facing projector with a top-down projection—to ensure that
+                imagery could inhabit both architectural surfaces and small object details. A physical clay character
+                replaced early animated character concepts to avoid visual distortion during projection.
+            </p>
+
+            <!-- Safe Space Gallery 1 (4 images) -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Safe Space — Fabrication &amp; Mapping Setup</div>
+                <div class="img-slider">
+                    <img src="Images/mit/safe-space/setup-01.jpg" alt="Safe Space setup image" loading="lazy" />
+                    <img src="Images/mit/safe-space/setup-02.jpg" alt="Safe Space setup image" loading="lazy" />
+                    <img src="Images/mit/safe-space/setup-03.jpg" alt="Safe Space setup image" loading="lazy" />
+                    <img src="Images/mit/safe-space/setup-04.jpg" alt="Safe Space setup image" loading="lazy" />
+                </div>
             </div>
 
-            <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/830620391" title="Safe Space capstone presentation"
-                    allowfullscreen></iframe>
+            <p>
+                User testing revealed a consistent emotional arc. Participants often described the space as “cute” or
+                calm at first, followed by discomfort, stress, and concern for the character. Feedback confirmed that
+                the gradual loss of control—rather than sudden disruption—was key to the work’s emotional impact. The
+                project also revealed technical limitations, including fragility during transport and sensitivity to
+                prolonged interaction, which informed my understanding of scalability and robustness in interactive
+                installations.
+            </p>
+
+            <p>
+                Safe Space represents my interest in creating environments where interaction is not about solving a
+                problem, but about inhabiting an emotional condition—using system behavior, physical materials, and
+                audience input to communicate experiences that are difficult to articulate verbally.
+            </p>
+
+            <p>
+                Each piece of furniture in the room functions as an interactive trigger. Viewers use a handheld keyboard
+                to activate different objects, prompting changes in projected imagery and sound. Initially, interactions
+                feel controlled and exploratory: objects shuffle gently, and the character breathes calmly.
+            </p>
+
+            <p>
+                However, sustained or repeated input causes the system to destabilize. Projections accelerate, audio
+                glitches intensify, and the character’s breathing becomes rapid and panicked. When multiple objects are
+                activated simultaneously, the room becomes chaotic—mirroring the experience of intrusive thoughts and
+                cognitive overload.
+            </p>
+
+            <p>
+                The system was built in TouchDesigner using keyboard input to control video playback, animation states,
+                and sound layers. Rather than rewarding mastery, the interaction is designed to resist control. The more
+                users attempt to “fix” or stabilize the space, the more unstable it becomes—reflecting cycles of doubt
+                and anxiety that escalate through repeated checking and rumination.
+            </p>
+
+            <!-- Safe Space Gallery 2 (6 images) -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Safe Space — Interaction States &amp; Projection Details</div>
+                <div class="img-slider">
+                    <img src="Images/mit/safe-space/state-01.jpg" alt="Safe Space projection state" loading="lazy" />
+                    <img src="Images/mit/safe-space/state-02.jpg" alt="Safe Space projection state" loading="lazy" />
+                    <img src="Images/mit/safe-space/state-03.jpg" alt="Safe Space projection state" loading="lazy" />
+                    <img src="Images/mit/safe-space/state-04.jpg" alt="Safe Space projection state" loading="lazy" />
+                    <img src="Images/mit/safe-space/state-05.jpg" alt="Safe Space projection state" loading="lazy" />
+                    <img src="Images/mit/safe-space/state-06.jpg" alt="Safe Space projection state" loading="lazy" />
+                </div>
             </div>
         </div>
 
@@ -137,40 +378,184 @@
         </div>
     </section>
 
-    <!-- NIGHT BY EXAM -->
-    <section class="card">
-        <h2>Night By Exam (Narrative Puzzle Game)</h2>
-        <p><strong>Role:</strong> self-developed — programming / art / game design</p>
-        <p>
-            A 2D narrative puzzle game about exam anxiety, looping self-criticism, and intrusive thoughts.
-        </p>
+    <!-- ================= NIGHT BY EXAM ================= -->
+    <section class="card" id="night-by-exam">
+        <header class="proj-header">
+            <h2 class="proj-title">Night By Exam</h2>
+            <p class="proj-subtitle">2D Narrative Puzzle Game</p>
+            <p class="proj-date">November 2024</p>
+        </header>
 
-        <div class="video-container">
-            <iframe src="https://player.vimeo.com/video/1145729838" title="Night By Exam demo" allowfullscreen>
-            </iframe>
+        <dl class="proj-meta">
+            <div class="meta-row">
+                <dt>Medium</dt>
+                <dd>Unity 2D game, original pixel art, narrative puzzle design</dd>
+            </div>
+            <div class="meta-row">
+                <dt>Role</dt>
+                <dd>Solo-developed — concept, programming, art, narrative design, production</dd>
+            </div>
+        </dl>
+
+        <div class="proj-section">
+            <h3>Project Overview</h3>
+            <p>
+                Night By Exam is a 2D pixel-art narrative puzzle game that explores exam anxiety, intrusive thoughts,
+                and the emotional pressure surrounding academic performance. Developed for the 2024 Mental Health
+                Champion game jam, the game uses looping environments and narrative-driven puzzles to depict cycles of
+                self-criticism and avoidance.
+            </p>
+            <p>
+                Players control a protagonist preparing for an exam late at night. Although the exit from the room is
+                physically accessible, the player repeatedly remains inside, navigating familiar objects and fragmented
+                notes. This looping structure reflects the difficulty of confronting fear directly, and the tendency to
+                stay within known routines even when they become distressing.
+            </p>
+            <p>
+                Rather than dramatizing mental illness, the game presents anxiety as a quiet, internal
+                struggle—expressed through environmental repetition, subtle visual changes, and restrained narrative
+                cues.
+            </p>
         </div>
 
+        <div class="proj-links">
+            <a href="game-night-by-exam-2024.html">Documentation (Project Page) →</a>
+        </div>
+
+        <div class="proj-section">
+            <h3>Video Demo</h3>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1145729838" title="Night By Exam demo"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="vid-caption">Runtime: <span class="vid-runtime">4:41</span></p>
+        </div>
+
+        <div class="proj-section">
+            <p>
+                The game is built around traditional point-and-click mechanics combined with a looping spatial system.
+                Each loop reveals small environmental changes: notes shift, objects gain new meanings, and dialogue
+                fragments evolve. These changes signal the protagonist’s emotional state rather than advancing a
+                conventional plot.
+            </p>
+
+            <p>
+                Core systems were implemented in Unity, including room-reset logic, interaction states, puzzle
+                progression, and narrative triggers. Visual tone and pacing were carefully tuned to maintain a sense of
+                quiet tension without overwhelming the player. Pixel art assets, character animations, and UI elements
+                were all created by hand to maintain stylistic cohesion.
+            </p>
+
+            <p>
+                Developing Night By Exam strengthened my understanding of how mechanics, visual language, and narrative
+                structure can work together to communicate psychological states. Working solo required balancing
+                programming, art production, and narrative pacing within a short time frame, reinforcing my ability to
+                prototype, iterate, and polish interactive systems efficiently. The project reflects my ongoing interest
+                in using games as a medium for translating internal emotional experiences into interactive form with
+                nuance and care.
+            </p>
+
+            <!-- NBE Gallery (5 images) -->
+            <div class="gallery-block">
+                <div class="sub-gallery-title">Night By Exam — Gameplay &amp; Art</div>
+                <div class="img-slider">
+                    <img src="Images/mit/nbe/01.jpg" alt="Night By Exam still" loading="lazy" />
+                    <img src="Images/mit/nbe/02.jpg" alt="Night By Exam still" loading="lazy" />
+                    <img src="Images/mit/nbe/03.jpg" alt="Night By Exam still" loading="lazy" />
+                    <img src="Images/mit/nbe/04.jpg" alt="Night By Exam still" loading="lazy" />
+                    <img src="Images/mit/nbe/05.jpg" alt="Night By Exam still" loading="lazy" />
+                </div>
+            </div>
+        </div>
 
         <div class="card-footer">
             <a href="game-night-by-exam-2024.html">Project page →</a>
         </div>
     </section>
 
-    <!-- MAKE THEM CRY -->
-    <section class="card">
+
+    <!-- ================= MISSING QIN ================= -->
+    <section class="card" id="missing-qin">
+        <header class="proj-header">
+            <h2 class="proj-title">Missing Qin</h2>
+            <p class="proj-subtitle">2D Narrative Puzzle Game</p>
+            <p class="proj-date">April 2025</p>
+        </header>
+
+        <dl class="proj-meta">
+            <div class="meta-row">
+                <dt>Medium</dt>
+                <dd>Unity 2D game, original pixel art, narrative puzzle design</dd>
+            </div>
+            <div class="meta-row">
+                <dt>Role</dt>
+                <dd>Team of 2 — background art, programming, and interaction design</dd>
+            </div>
+        </dl>
+
+        <div class="proj-section">
+            <h3>Project Overview</h3>
+            <p>
+                Missing Qin is a 2D pixel-art narrative puzzle game that examines how harassment and social pressure are
+                often normalized or romanticized within school environments. Developed for Ludum Dare 57 by a two-person
+                team, the game follows a protagonist searching for a missing classmate, gradually uncovering how
+                institutional silence and peer dynamics contribute to harm.
+            </p>
+            <p>
+                Rather than framing the mystery around a single event, the game reveals patterns of behavior through
+                environmental storytelling. As players explore familiar school spaces, they encounter fragmented
+                dialogue that builds up to a whole story. The narrative intentionally avoids clear villains, focusing
+                instead on the collective systems that allow harm to persist.
+            </p>
+            <p>
+                The project explores how memory, rumor, and social expectation shape what is considered “normal,” along
+                with topics of how friendship persists under high pressure.
+            </p>
+        </div>
+
+        <div class="proj-links">
+            <a href="game-missing-qin.html">Documentation (Project Page) →</a>
+        </div>
+
+        <div class="proj-section">
+            <h3>Video Demo</h3>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1153793797" title="Missing Qin demo"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="vid-caption">Runtime: <span class="vid-runtime">1:43</span></p>
+        </div>
+
+        <!-- Missing Qin Gallery (4 images) -->
+        <div class="gallery-block">
+            <div class="sub-gallery-title">Missing Qin — Gameplay &amp; Art</div>
+            <div class="img-slider">
+                <img src="Images/mit/missing-qin/01.jpg" alt="Missing Qin still" loading="lazy" />
+                <img src="Images/mit/missing-qin/02.jpg" alt="Missing Qin still" loading="lazy" />
+                <img src="Images/mit/missing-qin/03.jpg" alt="Missing Qin still" loading="lazy" />
+                <img src="Images/mit/missing-qin/04.jpg" alt="Missing Qin still" loading="lazy" />
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <a href="game-missing-qin.html">Project page →</a>
+        </div>
+    </section>
+
+    <!-- ================= MAKE THEM CRY ================= -->
+    <section class="card" id="make-them-cry">
         <h2>Make Them Cry (Global Game Jam 2024)</h2>
         <p><strong>Role:</strong> programmer / narrative designer</p>
-        <p>
-            A hybrid 2D/3D narrative puzzle game built during Global Game Jam 2024.
-        </p>
+        <p>A hybrid 2D/3D narrative puzzle game built during Global Game Jam 2024.</p>
 
         <img class="thumb" src="https://img.itch.zone/aW1nLzE0ODQ0Mzk2LnBuZw==/original/HC9tPv.png"
             alt="Make Them Cry thumbnail" />
 
         <div class="card-footer">
-            <a href="game-make-them-cry.html">Click for more →</a>
+            <a href="game-make-them-cry.html">Project page →</a>
         </div>
     </section>
+
 
     <footer>
         <p>&copy; 2024 June Shi. All rights reserved.</p>
