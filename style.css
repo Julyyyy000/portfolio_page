@@ -123,7 +123,84 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Thumbnails */
+/* ---------- MIT / Curated Portfolio Project Structure ---------- */
+.proj-header {
+  margin-bottom: 1rem;
+}
+
+.proj-title {
+  margin: 0;
+}
+
+.proj-subtitle {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  color: var(--granite);
+}
+
+.proj-date {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--granite);
+}
+
+.proj-meta {
+  margin: 1rem 0 1.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  padding: 0.4rem 0;
+}
+
+.proj-meta dt {
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.proj-meta dd {
+  margin: 0;
+}
+
+.proj-section {
+  margin-top: 1.2rem;
+}
+
+.proj-section h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+
+.proj-links {
+  margin-top: 0.8rem;
+}
+
+.proj-links a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.proj-links a:hover {
+  text-decoration: underline;
+}
+
+.vid-caption {
+  margin: 0.55rem 0 0;
+  font-size: 0.95rem;
+  color: var(--granite);
+}
+
+.vid-runtime {
+  margin-left: 0.6rem;
+  font-weight: 600;
+}
+
+/* ---------- Thumbnails ---------- */
 .thumb,
 .detail-thumb {
   width: 100%;
@@ -148,8 +225,18 @@ button:hover {
   margin-right: auto;
 }
 
+/* ---------- Gallery blocks (image sliders) ---------- */
+.gallery-block {
+  margin-top: 1.2rem;
+}
 
-/* Grids for cards (games, moving image, etc.) */
+.gallery-note {
+  margin: 0.35rem 0 0.8rem;
+  font-size: 0.95rem;
+  color: var(--granite);
+}
+
+/* ---------- Grids for cards (games, moving image, etc.) ---------- */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -226,9 +313,9 @@ button:hover {
   display: block;
 }
 
-/* ---------- Dreamcore image slider ---------- */
+/* ---------- Image slider (horizontal gallery) ---------- */
 .sub-gallery-title {
-  margin-top: 2rem;
+  margin-top: 1.2rem;
   font-size: 1.05rem;
   font-weight: 600;
 }
@@ -241,9 +328,12 @@ button:hover {
   display: flex;
   gap: 1rem;
   padding-bottom: 0.4rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+
+  /* nicer scroll */
+  scroll-padding-left: 8px;
 }
 
 .img-slider img {
@@ -254,13 +344,15 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   scroll-snap-align: start;
+
+  /* optional if you add a lightbox later */
+  cursor: zoom-in;
 }
 
 .img-slider::before,
 .img-slider::after {
   content: none;
 }
-
 
 /* ---------- Dress-up animation block (home page) ---------- */
 .about-wrapper {
@@ -327,6 +419,11 @@ button:hover {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .meta-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
 }
 
 /* ---------- Minigame layer order ---------- */
@@ -357,12 +454,6 @@ button:hover {
   gap: 12px;
   align-items: center;
   justify-content: center;
-}
-
-/* Make the triangles slightly easier to click */
-.triangle-btn {
-  width: 36px;
-  height: 36px;
 }
 
 /* ---------- Triangle buttons ---------- */
@@ -399,7 +490,7 @@ button:hover {
   transform: translateY(-1px);
 }
 
-/* ---------- About minigame layout ---------- */
+/* ---------- About minigame layout (compat) ---------- */
 .about-wrapper {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -407,15 +498,15 @@ button:hover {
   align-items: center;
 }
 
-/* ---------- Fixed viewport for avatar ---------- */
+/* ---------- Fixed viewport for avatar (compat) ---------- */
 .animation-stack {
   position: relative;
   width: 320px;
-  /* 👈 adjust later if needed */
+  /* adjust later if needed */
   height: 320px;
-  /* 👈 MUST be fixed */
+  /* MUST be fixed */
   overflow: hidden;
-  /* 👈 prevents spill */
+  /* prevents spill */
   margin: 0 auto;
 }
 
@@ -424,11 +515,9 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 100%;
   height: 100%;
   object-fit: contain;
-
   pointer-events: none;
   image-rendering: auto;
 }
